@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML DIR="ltr">
+<HEAD>
+
+
+<META NAME="MS-IT-LOC" CONTENT="“画图”">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+
+<SCRIPT LANGUAGE="JScript" SRC="MS-ITS:ntshared.chm::/shared.js"></SCRIPT>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+
+<META NAME="MS-HAID" CONTENT="a_mspaint_overview">
+<TITLE>MyTunet 新手指南</TITLE> <LINK REL="stylesheet" MEDIA="screen" TYPE="text/css" HREF="MS-ITS:ntshared.chm::/coUA.css"> <LINK REL="stylesheet" MEDIA="print" TYPE="text/css" HREF="MS-ITS:ntshared.chm::/coUAprint.css">
+<style>
+<!--
+.style8 {color: #FF0000}
+.style15 {color: #0000FF}
+-->
+</style>
+<meta name="Microsoft Theme" content="sky 1011, default">
+</HEAD>
+<BODY> <DIV CLASS="Uabrand">
+	<p align="center">
+	<img border="0" src="title.JPG" width="242" height="61" align="right"></DIV>
+
+<H1>　</H1>
+<H1>&nbsp;</H1>
+<H1><a name="mspaint_overview"><font size="5">MyTunet 新手指南</font></a></H1>
+<font color="#0000FF">
+第一步：安装网卡驱动</font><blockquote>
+	<p align="left">
+	大多数网卡都能被windows系统自动识别并安装驱动，少数不能识别的，请将主板附带的光盘插入光驱，按照主板说明书知道安装主板驱动。</p>
+	<p align="left">如果主板驱动光盘找不到了，推荐到<a href="http://www.mydrivers.com/">www.mydrivers.com</a>上寻找网卡驱动。</p>
+	<p align="left">如果主板说明书找不到了，通常按如下步骤可以安装。</p>
+	<p align="left">在桌面我的电脑图标上点击右键，选择&quot;属性&quot;，进入&quot;硬件&quot;页，然后点击设备管理器。</p>
+	<p align="left">
+	选择打问号的设备，找到&quot;网络适配器&quot;，然后双击打开，选择&quot;驱动程序&quot;页，然后单击&quot;更新驱动程序&quot;，会出现询问：windows可以连接到windows 
+	update搜索软件，此时选择否，点击下一步。 </p>
+	<p align="left">插入主板光盘，选择从&quot;自动安装软件（推荐）&quot;。</p>
+</blockquote>
+<p align="left"><font color="#0000FF">第二步：设置ip地址</font></p>
+<blockquote>
+	<p align="left">
+	在安装好网卡之后，桌面右下角会出现一个有“两个计算机的图标”，这是windows正在配置网卡，双击这个图标，再点击“属性”按钮，在“此连接使用下列项目”处选择“internet协议（tcp/ip）”双击，然后将自动获得ip地址改为使用下面的ip地址。</p>
+	<p align="left">具体规则如下</p>
+	<div align="center">
+		<table id="table1" border="1" width="80%">
+			<tr>
+				<td width="89">IP地址</td>
+				<td width="137"><span class="style8">59.66.254</span>.43</td>
+				<td>我这是随便写了个例子，为了说明问题，不要深究，呵呵，实际填写一定要写你的正确信息！</td>
+			</tr>
+			<tr>
+				<td width="89">子网掩码</td>
+				<td width="137"><span class="style15">255.255.255</span>.0</td>
+				<td>注意！由于59.*.*.* 是 A 段 IP，因此 Windows 默认的子网掩码是255.0.0.0，一定要改过来！</td>
+			</tr>
+			<tr>
+				<td width="89">默认网关</td>
+				<td width="137"><span class="style8">59.66.254</span>.1</td>
+				<td>注意！网关的前三段与你的IP是一样的！</td>
+			</tr>
+			<tr>
+				<td width="89">DNS服务器</td>
+				<td width="137">166.111.8.28 , 166.111.8.29</td>
+				<td>这个没什么好说的，标配</td>
+			</tr>
+		</table>
+	</div>
+	<p align="left">然后点击确定。</p>
+</blockquote>
+<p align="left"><font color="#0000FF">第三步：关闭Windows XP SP2 默认的802.1x端口验证</font></p>
+<blockquote>
+	<p>打开网络和拨号连接：</p>
+	<p>有三条路可以走：<br>
+	一：打开“控制面版”-&gt;“网络和拨号连接”<br>
+	二：在桌面上或开始菜单里，右键点“网络邻居”-&gt;“属性”<br>
+	三：任务栏又下角又键点那个网络图标，选“状态”-&gt;“属性”</p>
+  <p>好了，现在在网卡上点右键，选“属性”，<br>
+	在第二个标签里，取消那个802.1x的身份验证选项。&nbsp; (这个一定要关，否则与清华的登录冲突） <br>
+	在第三个标签里，选“禁用防火墙”（一般来说这个不需要，但如果登录有问题，可以关了试一下）。</p>
+</blockquote>
+<p class="style15">第四步：安装MyTunet</p>
+<blockquote>
+    <p>将MyTunet.zip解压缩到一个目录下，然后运行MyTunet.exe即可</p>
+    <p>输入您的用户名和密码，选择连接方式，在紫荆地区的用户，确认选择了802.1x认证。</p>
+    <p>单击连接，即可上网。</p>
+    <p>如果有问题，MyTunet的压缩包中还附带了官方版本，可以用官方版本试验一下。</p>
+    <p>如果官方版正常，那么您可能遇到了MyTunet的一个缺陷，麻烦您告诉我们。</p>
+    <p>如果官方版也不正常，应该是您的设置有错误，请检查您的前三步操作是否正确，或者可以参见“校园网常见问题”一节。</p>
+</blockquote>
+</BODY>
+</HTML>

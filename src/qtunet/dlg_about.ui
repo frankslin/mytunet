@@ -1,0 +1,54 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>DlgAbout</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>DlgAbout</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>432</width>
+            <height>341</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>About MyTunet</string>
+    </property>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>textEdit1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>411</width>
+                <height>320</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Author: Chice (Wang Xiaoguang, chice_wxg@163.com)
+
+Welcome to MyTunet Homepage.
+
+You can get new MyTunet and ask questions.
+
+Any of them is ok:
+
+http://www.mytunet.com/  
+
+http://mytunet.go.3322.org/ 
+
+http://mytunet.tsing.org/</string>
+        </property>
+        <property name="wordWrap">
+            <enum>WidgetWidth</enum>
+        </property>
+    </widget>
+</widget>
+<includes>
+    <include location="local" impldecl="in implementation">dlg_about.ui.h</include>
+</includes>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

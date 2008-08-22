@@ -1,0 +1,254 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<title>客户端(V3.06)简要使用说明</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+ /* Page Definitions */
+ @page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-size:16.0pt;font-family:宋体'>TUNet</span></b><b><span
+style='font-size:16.0pt;font-family:宋体'>客户端（<span lang=EN-US>V3.06</span>）简要使用说明</span></b></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:14.9pt'><span
+style='font-family:宋体'>本系统在原有“清华大学网络安全登录系统”基础上增加了基于<span lang=EN-US>802.1x</span>协议的端口认证功能，进一步增强了登录的安全性。目前该版本支持<span
+lang=EN-US>Windows98se</span>、<span lang=EN-US> Windows Me</span>、<span
+lang=EN-US>Windows2000</span>系列、<span lang=EN-US>WindowsXP</span>及<span
+lang=EN-US>Windows2003</span>操作系统。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt'><b><span
+lang=EN-US style='font-family:宋体'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-family:宋体'>安装方法：</span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>1、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>首先，请用管理员身份登录。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>2、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>安装<span lang=EN-US>TUNet306.EXE</span>文件。初次安装时，程序会自动安装<span
+lang=EN-US>winpcap3.0</span>。并在<span lang=EN-US>“</span>开始<span lang=EN-US>”</span>－<span
+lang=EN-US>&gt;“</span>程序<span lang=EN-US>”</span>中添加<span lang=EN-US>“</span>清华大学校园网用户登录系统<span
+lang=EN-US>”</span>。安装完毕需要重启系统。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>3、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>安装目录中有一个<span lang=EN-US>CloseWindot1x.exe</span>程序，它用来关闭<span
+lang=EN-US>windows2000/XP</span>自带的端口认证功能。本程序在安装过程中自动执行，一般不必单独手工执行。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>4、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>请通过<span lang=EN-US><a
+href="https://usereg.tsinghua.edu.cn/">https://usereg.tsinghua.edu.cn/</a>&nbsp;</span>界面把您要使用的<span
+lang=EN-US>IP</span>地址的类型改为共享或独享，并至少需要一个连接数。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>5、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>初次使用时，如果是紫荆公寓的用户，可以在“系统配置”下<span
+lang=EN-US>“</span></span><span lang=EN-US>IP</span><span style='font-family:
+宋体'>地址检查</span><span lang=EN-US style='font-family:宋体'>”</span><span
+style='font-family:宋体'>中，查看默认<span lang=EN-US>IP</span>地址<span lang=EN-US>“219.224.0.0”</span>；如果不是紫荆公寓用户，请设为你本机机器<span
+lang=EN-US>IP</span>地址的前两段。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt'><b><span
+lang=EN-US style='font-family:宋体'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-family:宋体'>使用主界面：</span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>1、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>启动时会弹出界面：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:21.0pt'><span
+lang=EN-US style='font-family:宋体'><img border=0 width=364 height=211
+src="客户端(V3.06)简要使用说明/image001.jpg"></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>2、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>如果不正确，请选择“跳过”后，进入主界面后，直接参照<span
+lang=EN-US>4.1</span>（系统配置）进行修改。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>3、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>在主界面（下图）中，从“网卡”列表框，选择需要认证的网卡。（如果你的系统安装了<span
+lang=EN-US>VMware</span>软件，请不要选择<span lang=EN-US>Network Adapter VMnet*</span>名称的网卡）。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>4、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>在登录类型列表框，可以选择：校内<span lang=EN-US>------</span>校内登陆</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:宋体'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-family:宋体'>受限<span lang=EN-US>------</span>受限（国内）登陆</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:宋体'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-family:宋体'>开放<span lang=EN-US> ------</span>开放（出国）登陆</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>5、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>在“需要端口认证”复选框：选中时需要进行端口认证和<span
+lang=EN-US>TUNet</span>认证，不选中只进行<span lang=EN-US>TUNet</span>认证。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:24.0pt'><span
+lang=EN-US><img border=0 width=438 height=367
+src="客户端(V3.06)简要使用说明/image002.jpg"></span><span lang=EN-US
+style='font-family:宋体'>&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>6、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>输入用户名密码后点击“连接网络”进行联网操作。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>7、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>成功后显示如下：</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-indent:17.95pt'><span
+style='font-family:宋体'>若联网类型为“校内”，则任务栏中图标变为<span lang=EN-US><img border=0
+width=30 height=30 src="客户端(V3.06)简要使用说明/image003.jpg"></span>。</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-indent:17.95pt'><span
+style='font-family:宋体'>若联网类型为“受限”，则任务栏中图标变为<span lang=EN-US><img border=0
+width=32 height=31 src="客户端(V3.06)简要使用说明/image004.jpg"></span>。</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-indent:17.95pt'><span
+style='font-family:宋体'>若联网类型为“开放”，则任务栏中图标变为<span lang=EN-US><img border=0
+width=33 height=32 src="客户端(V3.06)简要使用说明/image005.jpg"></span>。</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-indent:17.95pt'><span
+lang=EN-US style='font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt'><b><span
+lang=EN-US style='font-family:宋体'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-family:宋体'>服务器消息按钮：</span></b></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:18.0pt'><span
+style='font-family:宋体'>点击该按钮后出现消息列表对话框，登录、退出过程中的消息将在这里显示，注意端口认证，<span
+lang=EN-US>TUNnet </span>认证通过后分别有不同的消息提示。消息可以存盘。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt'><a
+name="_Ref70394278"><b><span lang=EN-US style='font-family:宋体'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b><span
+style='font-family:宋体'>系统配置按钮：</span></b></a><b><span lang=EN-US
+style='font-family:宋体'> </span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>1、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>主界面如下图。</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:21.0pt'><b><span
+lang=EN-US style='font-family:宋体'><img border=0 width=490 height=306
+src="客户端(V3.06)简要使用说明/image006.jpg"></span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:18.0pt'><span
+style='font-family:宋体'>在该界面中可以设置<span lang=EN-US>IP</span>及掩码。<span lang=EN-US>“</span>断线重连<span
+lang=EN-US>”</span>或<span lang=EN-US>“</span>每隔<span lang=EN-US>××</span>分钟重新登录<span
+lang=EN-US>”</span>功能打开后，如果在重连或重新登录过程中出现直到最后一次重试才能成功，请将重试间隔设长一点，因为时间间隔太小的话，会出现端口认证尚未通过时就进行下一次重试的现象。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:18.0pt'><span
+style='font-family:宋体'>早期版本的客户端中，“弹出欢迎消息”和“弹出服务器消息”两项在本客户端中已经合并为一个。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>2、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>“端口认证配置”按钮：</span></p>
+
+<p class=MsoNormal style='margin-left:44.95pt;text-indent:17.95pt'><span
+style='font-family:宋体'>“启用网卡低效模式”：个别网卡无法收到交换机发来的包，请启用这个选项试试，<span lang=EN-US>Windows98/Me</span>可能需要。</span></p>
+
+<p class=MsoNormal style='margin-left:44.95pt;text-indent:17.95pt'><span
+style='font-family:宋体'>“连接超时”：如果时间间隔设得太小，会使端口认证无法通过。</span></p>
+
+<p class=MsoNormal style='margin-left:45.0pt'><span lang=EN-US
+style='font-family:宋体'><img border=0 width=348 height=207
+src="客户端(V3.06)简要使用说明/image007.jpg"></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>3、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span lang=EN-US style='font-family:宋体'> </span><a
+name="_Ref70394292"><span style='font-family:宋体'>“启动选项”按钮：</span></a></p>
+
+<p class=MsoNormal style='margin-left:44.95pt;text-indent:17.85pt'><span
+style='font-family:宋体'>程序启动时需要进行的配置，如下图。无论是否存有密码，此对话框初次弹出时密码一栏中为空。</span></p>
+
+<p class=MsoNormal style='text-indent:45.0pt'><span lang=EN-US
+style='font-family:宋体'><img border=0 width=347 height=185
+src="客户端(V3.06)简要使用说明/image008.jpg"></span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-indent:17.95pt'><span
+style='font-family:宋体'>自动启动时使用的登录类型为系统配置主界面中所选用的登录类型。</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:-21.0pt'><b><span
+lang=EN-US style='font-family:宋体'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-family:宋体'>其他注意事项</span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><i><span
+lang=EN-US style='font-family:宋体;color:#FF3399'>1、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></i><b><i><span style='font-family:宋体;color:#FF3399'>在认证失败后，大约需要等待<span
+lang=EN-US>3</span>－<span lang=EN-US>5</span>秒，交换机才能接受下一次的认证请求。</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>2、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>如果不能上网，请参照我们提供的<span lang=EN-US>FAQ</span>进行检查，此<span
+lang=EN-US>FAQ</span>也可在水木清华<span lang=EN-US>bbs</span>站<span lang=EN-US>thunet</span>版上获得。如果仍然不能上网，请致电<span
+lang=EN-US>84859</span>或发信到 </span><span class=MsoHyperlink><b><span
+lang=EN-US style='font-family:宋体'>support@tsinghua.edu.cn</span></b></span><span
+style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:宋体'>3、<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:宋体'>谢谢协助！</span></p>
+
+</div>
+
+</body>
+
+</html>

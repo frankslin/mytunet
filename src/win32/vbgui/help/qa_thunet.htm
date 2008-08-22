@@ -1,0 +1,101 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML DIR="ltr">
+<HEAD>
+
+
+<META NAME="MS-IT-LOC" CONTENT="“画图”">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+
+<SCRIPT LANGUAGE="JScript" SRC="MS-ITS:ntshared.chm::/shared.js"></SCRIPT>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+
+<META NAME="MS-HAID" CONTENT="a_mspaint_overview">
+<TITLE>疑难解答：校园网使用常见问题与解决方案</TITLE> <LINK REL="stylesheet" MEDIA="screen" TYPE="text/css" HREF="MS-ITS:ntshared.chm::/coUA.css"> <LINK REL="stylesheet" MEDIA="print" TYPE="text/css" HREF="MS-ITS:ntshared.chm::/coUAprint.css">
+<style>
+<!--
+.style8 {color: #FF0000}
+.style15 {color: #0000FF}
+.style5 {
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 16px;
+}
+.style7 {color: #000000}
+.style12 {color: #009900; font-weight: bold; font-size: 16px; }
+.style16 {
+	color: #0000CC;
+	font-weight: bold;
+}
+.style3 {font-size: 24px}
+-->
+</style>
+<meta name="Microsoft Theme" content="sky 1011, default">
+</HEAD>
+<BODY> <DIV CLASS="Uabrand">
+	<p align="center">
+	<img border="0" src="title.JPG" width="242" height="61" align="right"></DIV>
+
+<H1>　</H1>
+<H1>&nbsp;</H1>
+<H1><span class="style4"><span class="style2"><font size="5">校园网常见问题与解决方案</font></span></span></H1>
+这些问题是我根据以往很多朋友们问过的问题总结的。希望对大家有帮助。<p>0. 出现问题，请以官方的公告和说明为准。“<a href="http://bbs.tsinghua.edu.cn/bbsdoc.php?board=THUNet" target="_blank">清华大学BBS</a>”
+		的 THUNet 版有关于网络问题的详细解答。</p>
+        <p>我这里只是列了一些那里没有的内容。</p>        
+        <p class="style15">1. 如何关闭Windows XP SP2 默认的802.1x端口验证和防火墙（如果不关闭，有可能影响上网）？</p>
+        <p>打开网络和拨号连接：</p>
+        <p>有三条路可以走，任选其一：<br>
+  一：打开“控制面版”-&gt;“网络和拨号连接”<br>
+  二：在桌面上或开始菜单里，右键点“网络邻居”-&gt;“属性”<br>
+  三：任务栏又下角又键点那个网络图标，选“状态”-&gt;“属性”</p>
+<p>现在在网卡上点右键，选“属性”，<br>
+  在第二个标签里，取消那个802.1x的身份验证选项（这个一定要关，否则与清华的登录冲突）。<br>
+  在第三个标签里，选“禁用防火墙”（一般来说这个不时必须的，但如果登录有问题，可以关了试一下）。 </p>
+        <p class="style15">2. 有的时候网络忽然断掉就再也连接不上了？</p>
+        <p>答：可以重新启动。或者，把网线拔掉重新插一下。</p>
+        <p class="style15">3. 什么是 802.1x 端口认证？清华校园网登录需要哪些验证（紫荆公寓区）？</p>
+        <p>答：802.1x 端口认证是一种网络协议。用于确认用户身份后再给用户打开网络连接。在紫荆公寓区，经过802.1x 端口认证，打开校园内的连网权限。然后再通过网络中心服务器，打开国内/出国 连网权限。</p>
+        <p>&nbsp;MyTunet 的登录记录里把 802.1x 端口认证的记录标记为“[802.1x]”，把打开联网权限的记录标记为“[tunet]”</p>
+        <p class="style15">4. 为什么我过了 802.1x 端口认证，但打开连网权限时提示网络出错？<br>
+   　　或者无法连接一些原来可以连接的 FTP ？</p>
+        <p>答：请确保：<br>
+        (1)没有防火墙干扰（可以先把防火墙都关了再试一下，特别是Windows XP SP2自己带了一个防火墙。<br>
+        (2)你的网卡配置信息是正确的。标准的网卡配置信息应该如下（紫荆公寓区）：</p>
+		<div align="center">
+		<table id="table1" border="1" width="80%">
+			<tbody><tr>
+				<td width="89">IP地址</td>
+				<td width="137"> <span class="style8">59.66.254</span>.43</td>
+				<td>我这是随便写了个例子，为了说明问题，不要深究，呵呵</td>
+			</tr>
+			<tr>
+				<td width="89">子网掩码</td>
+				<td width="137"><span class="style15">255.255.255</span>.0</td>
+				<td>注意！由于59.*.*.* 是 A 段 IP，因此 Windows 默认的子网掩码是255.0.0.0，一定要改过来！</td>
+			</tr>
+			<tr>
+				<td width="89">默认网关</td>
+				<td width="137"><span class="style8">59.66.254</span>.1</td>
+				<td>注意！网关的前三段与你的IP是一样的！</td>
+			</tr>
+			<tr>
+				<td width="89">DNS服务器</td>
+				<td width="137">166.111.8.28 , 166.111.8.29</td>
+				<td>这个没什么好说的，标配</td>
+			</tr>
+		</tbody></table>
+        </div>
+        <p>说明：我遇到 n 多人把 网关 或 IP地址 之类写错了，就是上不去网。其实本来很简单的一件事，输入的时候小心点就 ok 了。</p>
+        <p class="style15">5. 我连网后几分钟就断， 然后就连不上了，但重新启动就好了。</p>        <p>答：很可能是网卡有问题。特别是一些集成的网卡，
+		总是工作不正常。如果你用的恰好是集成网卡，建议你借一块普通网卡（当然是最好能借到
+
+
+ Realtek 8139 了，呵呵） 来试试。如果问题解决，恭喜，买块网卡去吧。如果没解决…… 或许就是网络问题了。</p>
+        <p>说明：我已经帮两个同学换网卡了，都是换了就好，郁闷吧？</p>
+        <p class="style15">6. 无论是用 Tunet 还是 MyTunet ，均显示登录成功，但仍然无法访问校外网站，怎么办？</p>
+        <p>答：这是由于学校中心服务器没及时处理你的连网请求造成的。可以用以下方法解决：去 <a href="https://usereg.tsinghua.edu.cn/">https://usereg.tsinghua.edu.cn/</a> 打开连网权限即可。</p>
+        <p>&nbsp;</p>
+</BODY>
+</HTML>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML><HEAD><meta name="GENERATOR" content="Kaiyinsoft&reg; eLSE-CHMmaker 2.80"><!-- Sitemap 1.0 --></HEAD><BODY><OBJECT type="text/site properties">
+<param name="Window Styles" value="0x800025">
+</OBJECT><UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="MyTunet 概述">
+<param name="Local" value="overview.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="校园网使用常见问题与解决方案">
+<param name="Local" value="qa_thunet.htm">
+<param name="ImageNumber" value="12">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="使用指南">
+<param name="Local" value="guide.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="疑难解答">
+<param name="ImageNumber" value="1">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="运行 MyTunet 需要什么环境？">
+<param name="Local" value="qa_env.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="MyTunet 的状态图标具体是什么含义？">
+<param name="Local" value="qa_icons.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="MyTunet 安全吗？">
+<param name="Local" value="qa_safty.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="操作指南">
+<param name="ImageNumber" value="1">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="如何把 MyTunet 安装为服务？">
+<param name="Local" value="howto_service.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="如何使用多帐户快速切换功能？">
+<param name="Local" value="howto_accounts.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<param name="Name" value="MyTunet 设置图解">
+<param name="Local" value="picture.htm">
+</OBJECT>
+</UL></BODY></HTML>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML DIR="ltr">
+<HEAD>
+
+
+<META NAME="MS-IT-LOC" CONTENT="“画图”">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+
+<SCRIPT LANGUAGE="JScript" SRC="MS-ITS:ntshared.chm::/shared.js"></SCRIPT>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+
+<META NAME="MS-HAID" CONTENT="a_mspaint_overview">
+<TITLE>疑难解答：MyTunet for Windows 安全吗？</TITLE> <LINK REL="stylesheet" MEDIA="screen" TYPE="text/css" HREF="MS-ITS:ntshared.chm::/coUA.css"> <LINK REL="stylesheet" MEDIA="print" TYPE="text/css" HREF="MS-ITS:ntshared.chm::/coUAprint.css">
+<style>
+<!--
+.style8 {color: #FF0000}
+.style15 {color: #0000FF}
+.style5 {
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 16px;
+}
+.style7 {color: #000000}
+.style12 {color: #009900; font-weight: bold; font-size: 16px; }
+.style16 {
+	color: #0000CC;
+	font-weight: bold;
+}
+.style3 {font-size: 24px}
+-->
+</style>
+<meta name="Microsoft Theme" content="sky 1011, default">
+</HEAD>
+<BODY> <DIV CLASS="Uabrand">
+	<p align="center">
+	<img border="0" src="title.JPG" width="242" height="61" align="right"></DIV>
+
+<H1>　</H1>
+<H1>&nbsp;</H1>
+<H1><span class="style4"><font size="5">MyTunet 安全吗？</font></span></H1>
+有网络通信，MyTunet 与官方 Tunet 完全一致。在网络通信的数据流上，
+		MyTunet 和官方 Tunet 的安全性完全等价。<p> 保存密码登录时，MyTunet 并不保存用户的原始密码。原始密码在第一次被输入后就被立刻从内存中销毁，整个登录过程不再需要原始密码（官方 Tunet
+  也是这么做的）。当然， MyTunet 必须保留通过原始密码生成的一些信息（官方
+  Tunet也是这么做的）。 MyTunet 把这些信息通过 Windows Crypt 加密系统进行加密，加密方式是与当前 Windows 用户相关联的。也就是说，只有当前的 Windows 用户才可
+		以获得这些敏感信息，并可保证这些信息不被恶意用户窃取。</p>
+</BODY>
+</HTML>

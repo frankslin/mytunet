@@ -1,0 +1,538 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>DlgMain</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>DlgMain</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>402</width>
+            <height>370</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>qtunet</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Adapter:</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>40</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Username:</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>70</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Password:</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>100</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Limitation:</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>cmdLogout</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>10</y>
+                <width>80</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Lo&amp;gout</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>cmbAdapter</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>10</y>
+                <width>120</width>
+                <height>24</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>chkSavePassword</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>220</x>
+                <y>100</y>
+                <width>170</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Save Password</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>cmbLimitation</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>100</y>
+                <width>120</width>
+                <height>24</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>cmdQuit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>70</y>
+                <width>80</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Quit</string>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>chkUseDot1x</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>130</y>
+                <width>300</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Use &amp;802.1x (for Zijing Users)</string>
+        </property>
+        <property name="tristate">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>lblStatus</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>150</y>
+                <width>300</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Status</string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>cmdLogin</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>220</x>
+                <y>10</y>
+                <width>80</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Logi&amp;n</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>imgStatus</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>140</y>
+                <width>22</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image1</pixmap>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>imgStatus_Domestic</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>120</y>
+                <width>22</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image2</pixmap>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>imgStatus_None</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>110</x>
+                <y>120</y>
+                <width>22</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image1</pixmap>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>imgStatus_Busy</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>120</y>
+                <width>22</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image3</pixmap>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>imgStatus_NoLimit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>80</x>
+                <y>120</y>
+                <width>22</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image4</pixmap>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>txtLog</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>180</y>
+                <width>380</width>
+                <height>180</height>
+            </rect>
+        </property>
+        <property name="textFormat">
+            <enum>LogText</enum>
+        </property>
+        <property name="undoDepth">
+            <number>0</number>
+        </property>
+        <property name="readOnly">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>imgStatus_Campus</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>140</x>
+                <y>120</y>
+                <width>22</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image5</pixmap>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>imgStatus_Dot1x</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>120</y>
+                <width>22</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image6</pixmap>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>txtUsername</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>40</y>
+                <width>120</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="frame">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>txtPassword</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>70</y>
+                <width>120</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="frame">
+            <bool>true</bool>
+        </property>
+        <property name="echoMode">
+            <enum>Password</enum>
+        </property>
+    </widget>
+    <widget class="QToolButton">
+        <property name="name">
+            <cstring>cmdHelp</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>220</x>
+                <y>40</y>
+                <width>170</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Help!!!!!!!!</string>
+        </property>
+    </widget>
+    <widget class="QToolButton">
+        <property name="name">
+            <cstring>cmdAbout</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>220</x>
+                <y>70</y>
+                <width>80</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>About</string>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2732">89504e470d0a1a0a0000000d49484452000000300000003008060000005702f98700000a73494441546881bd9a4d681dd715c77f362338175e60065e600664d03336f889042c831716f5a2822c62f02235e9462490450b09b4d04203cdc2db2e0a5926d04202c922abd8d0e06461901706259020191cfc0c321a830c3360c10c48702f6860bab877bede976427ed0159a3993bf79ecffff9189fe257a26c9495c94e42fe34278b334c9a634cf35c42213a1fe12ff944c38860189cfa35cefd459b6471568eee8ec8b613f2a7067da0a1700f0bc77d01b51cee99f48460a0882e870caf5f2238fff2c2bcd48bbbf777cbd17f46e43fe7506874c5dc5197d17942d4bf3d885e8f58796785b3d7cebe303f2ff442b693955b9f6d913e4e2d0335332d211c534a407aca329e6bf4011863baefd1bd8e2e47ac7db4f642ee75e2855b9f6d95f1bd188cc18c69517cf0cf870c7e3320381320be203d0171eb0c984383d937243b09f1fd98e44182494c679f4af8e1bb4396df58265a898ee5efd8053ad1e5c6271b98a74e7b98da254460e5bd2b0c7e3b38a91e1a2a60f4cd88cd8f3731b999b08a0c85f57fada3223597c7b90f75a2cb8d8f379a03dabe5d697fd14706c2a5372fe19ff34fc478fa73caa3bb8f48bf4fc9f6b25680d08d913eac7fb54e3098ed52331f647b59b9f9c926e4c6eedfdeb816c6b953254c28f87d9f6010408f8e56b367192631e4cf72f45e563f1b77c7896b1fd6bf5c9f8954536feae756f39816b33db8f4ee254484addb5be40ff3ae106de1ea6b6df7abeecd4029830de0d53fae420177fe74c75add919c11d6bf98ee4e133792eda47c74ef5127c0241056df5f45fa52afcb9fe48cee8d48b613c89bb898b01436377450eac85eab571583ab21833797095f0b9bbd1fe77cfdc1d70d0f40300c58bbb93611d8a7c705c8920c32100ff01cf37fe9320fe09ff3b9f2872bf6be677fc4b3494a7af65dfba34014aaa750beb22f2fd867fea270e56f6b1de601fc0b3e373ebb81f86e0f201b653cfaeed138bb5d0b6471566e7db5d524a505c3a5f756f117a707e7e89b11a3db23fb4761e174ede63544843ccf1b8d3bc13070ebcfb7d0fbd6b53882d50f57195e1f4edd3f7d9072e7fdaf3187767f3cb8f1e58d8e153a1618dd1d359a5b001506884837a81c9943437c2f6ed60bacfe75cd5aa407fea28fbfe47e167d9b1b4261eda3355465cc05d8fe74b3e3ef351555c911d44aa0803b37ef749679d545b69395a3ef4628cff92ba053cde6a79bd003e52bc2a590200af0977ce2bbb13dc4b348125db585da71145e0c195c5f26befd080d6803a3db2356de5e217d9c926c27243b09f9e31c9d641620bcc6022636ec7ebb5b5665476d8acd2f364b2a5315da22473b208f80c242aa28c11c7473c3f0f743545f216263c1e0dcc659cb5ed8eb6c2f63fbdfdb6074a34651e8e7ba390f1a941a83dae0f580f5afd61b01f4735d6e7fb3dd450e14fa504f0ad1c6fe0ee24c39acb2ef61ebd9f87b154acd83da579c22b2c6d5d66fdb04e701c40f63c413cb1cb0727d15f185f4694a1667e469de041ee24a1c43d773c5fd6bba662fb028551804309550f51a059e46d1b8ae1265fb8761447825247a2d22d94ed8f8f0db5a41f1dd186a1d99eaca42a0849699f0424878c141dc21a4a91528f92171823489a861cadd2fc6996d0908b59bd964a9c083e5b7060c2e0ff0976cd0b76970650081209955507cdf09a09feb32be3faacded9f9911883d08cf855040f253526b7d706d40742ec2ece76487dafab9369d024dc409d6138b6e3d85df17e2ed84edcfb71b262f0f082f861347bba3882e4624f762c4836c27237b98945ebe9fd75a3340b0184cdfc051b69335beed417421b210d90f394129d7a181276c7fe9042820fe3e9e2d00307c6340723f71c5a421dbd39cd687da61b9d8843366ba7132854155d8df6b90e66548fae232b9dd2fdbcbe6ae8f868316af42fa387689ac2a1b446ce29a2b01e0299407811fb432c94b90e784a81462a624b416495f5081aacf4ce29c53bb3fee9635a603283a50660a6371c7732de1beb1e714cda6a67df078795c802e74f7792bb3e77b39e400c6baf2a28cbd6f3a20903c486afe82f381c39e0581058339c262598dd7157e8f35342d7431a9015a89af5371ce2ab5cd947c61a1d63c69f51f1d6564dddce22a5aafae650a411626b1bdc90e53eed558af50e81ac729b015270d3874e96450db2107b5aad0e816883402e084504ee3959480d4bb892d0b0c8827d6bd7ae25ccd7a5fa5395d54595ceade7e5cab0690ac556a00d2073c1f711e60b029d214f677fe0c94d175dc7aca5368afa949061707730373f4ddc8eac7558b2b6fadcc5e7c02daf8e706c496517fe0b3f6f7b5996b4d6eb8f5c12d6b0d34d2174e23d0b5c23127b6d71fb7f604640e4cdd0cd50dcfccc5b4e240119c09382d2228078b08e487f9fc4d94759f5a88f9c8379f9fdc34658c27f8e1fc5498a779238007fe928f27bed88d3c852ae842e2140ac2802ccbac6717863ccdf1431f638c7dd7d83db4d14e630644087a4137dff484e4892b499cf5a3d7a3b967c73fc64d0de5413488f09452a79238292b77d0b986c5191a3b6c728225217918933ca4c90d55f0b561b58094b8db6340d310b93f9338b13d755f26e3b0c00e103c6c80bb1edd6b6b0040a1a842df1c1af2fd1c0eb11aad72437bf3c2618cf70250dbc929821406e3d91239be1b23af08aaaff017ed28de5ff2c99fe6ceddec79d18a1dd1db8626d3659ee7b5a4bad028cf0aa2d11d4d566bcc91e9fc5d65ed698dceb8351a88e5648d52df0e04cc7e33ea59bbb94670de35342a50a77677764b25aab182b34c2745b57ad3d6dcd66ae47c60eb66af15e46d32b60431c6a0734dfa7ddc74612e88e5607ad223a7637909a59ed4d5c7448b91759729bea73c05d2049ff484f4498aded74dd6f498397ea918a9848e7f882d6838d544af450caf0ec9d3dc36f4cf7274aa2dc45696a84afe0286d786f08f4676ab75a54e257b4939ae693ff4a796cce152489cc73563499c21fde96bdb64f60de9c3b4c672e5c1e0eac08e62cef9cd80d840fe2c67ebf6566b4227f89170f6ead9e97321bfef239ed42ea00b3dbbbc1650a16aa07141487e4e1affadbe09b8d2a3d2e4e8fea8299f3d082f87d38516d79b98662d1e2cbfbddc5936391bdd4b4a71916e0a831c9360e207f158903b97aaaada8aaa60aee1d6803fa71439848d4f37e080ba261a5c1eb0fcbbe5f9b3d1e84c74aa0aa5aa60cbd329d9b97099b1a59d3a1869fd4d254805b7cd3a0cc43fc5139339931b363e77d3f105bb36888209e661c678bd3c2acbce6cd391dfb796489fa55d586c432dcdfd69503b01ab584bfba16f270f056cdfdeb6dfd5dc7325b0f2ce2aead5138cd73b42eca76ea6d31cd46186f66f77605557b5d0ac4a82e6d058973053f62a6cf66c7f08d485468962e5ed95999f9ae67f62d2ba34797eac10d2b3bdf4710381eabd3ccdc952fbc5a6f3e5b29d0c1d0dae0ce67eec3bf6235f795496e97e6a91a9dd123a66fcd03f7e103083f23427f93199140283889dcc1df7a5f2c49f59b32c2bc71bf25a5b2efb569698d910195bae57da9faaf5c266dae5b5c980fd450240e552ad028de92e554d2114aaa97bc6345c35e59d1810b1455af43ff8d0dd11e44097ed3eb623c4983075704fdc77531067c1200a8886c77fd81ea75ff49f3df4812eab46a69e3f4ca01353a1b61a08446134151eff2f02b449ebb2b41d99992cab694a74112138f3ebfc571b80ff024ef8c333339adc5b0000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="232">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000000af49444154388d9592d10d84300c435d748375b3a49b79b3dec735c884702a962a954071fc52e041ee3e014c0073edf745f23c183f5ab53dc5a1d0bf2e0e75dd7129bfcb792382764072965ca2a8795fd67e9b90bae4557d7720c9cce0ee911724a35398590d65d72d2f92b30959857a760000bdf74b3d6abdf75676a3a0f2f3e3a895ac8e0f32ce4cbf74ceb72fdfcadcc96d0a6ff55940da72bbbc0c780030c688a870f73b40e580044b479df37f010ebf35a5eac116280000000049454e44ae426082</data>
+    </image>
+    <image name="image2">
+        <data format="PNG" length="255">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000000c649444154388d95936b0e02310884bfaa07e366ce9e4c6e567f1477e92b2a4d936602136628b0094915a8408df7efe1eead5871a10636c5634300029e03b688db5faded0846bd66d66709cc6cedcb09d64bafa4f6fe9cabe0c213499d4e1065133bc2447c07440172d70694e6a301eec06b107f000e0f7767d24c0c214d41c79ce0ee146873cf639204408dc997d2e3d04c35b3d291761f28342e0d5ec5e4f248b021c92dd4eef71d201472d5e10117187fe293efb1cbe924a4055a2dd6771f86ed3b4916c56f2bf1c7643732f2130000000049454e44ae426082</data>
+    </image>
+    <image name="image3">
+        <data format="PNG" length="243">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000000ba49444154388d8d53d111c520080b9d8cd1188dcdf23ec42a0aef9a9ebd1e922881020dcc8c000880f1fd1dee3ec804192211bb208d06e79b9292aefca7621bec53ec15d8eb7577aaeb95a8aeabb4dd97973c9fb5993c983122c72412331a67aab4a72444a6d9581d1900525dfb3203c9b1ccee7d845f3245dcfd55b7389671ac488e0380aa4255f3dddd9d76188ac3b86ea0ee6e140247472efb7237645dd9c2848320403389ffd0fe55a984e5f4ce2b4ba8450eb3ca110efc006b4ac1191e276ac30000000049454e44ae426082</data>
+    </image>
+    <image name="image4">
+        <data format="PNG" length="244">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000000bb49444154388da552410ec3300833d51ed6a7f969fccc3b242484649da621a1b6c671c10428415200d49f1fb1886b3f4c4800400050cb8955112b82522a9b05b861e3dcabb6b476f4546db18ce0eee3afa7300378520d93724a10d952c2560f2fae6c9c34db3643f391d30b1283970d95b467e2b6f703a77733db2c852190c71a3f60c7dd5d2112447757e031effa3d79c3f34ec07ddf818d3b91775f790f4b3b0bd4b84e2049e57593d8aef0a3c0df918d8dadc4ec3f8b7c3bfc062151db0e695fe4290000000049454e44ae426082</data>
+    </image>
+    <image name="image5">
+        <data format="PNG" length="257">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000000c849444154388d9d535b0e8430089c6ef660dcccf1667333f6a30f698bc66c9346a5409987c0cd22e9001c80b7f7f74b522d049de05f4d9ca03bdc1d3e9a64899f7cfe97b171b6e0ed10fa04005c92a7bcf4601c95a493170470140c68b1c948dc31b3ed999338d946583c24eb7ebae42b096696f0021cc7f57df25cf82424a10055779381fd88f5e94db85230c50942269859996e9554090b444d04135da17b29231fb1c1aa52d663775f93efc995b9131b4e26f63b70ecc92b84c4fbef7eac68d54856b77656fc03233728510c5c6d890000000049454e44ae426082</data>
+    </image>
+    <image name="image6">
+        <data format="PNG" length="212">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000009b49444154388d9552cb0ec330088369ff0df972f7d024036256d51217ccc3c4512170113479adb92f6b34d67d0375d0a7561866190923baf6241741dc3ceae0c22d15e98475f9507a2fb682c0e401c713757abb010872353b91eeef16b908f0105e2c3e5c788bec42983d8accca39756136459b0207f6c1f209ebd374203c5560bff20d0b7c0b1701f03ffcc985a1731389fab0ada8ba25e48ffa0bf3315a735bd6e8f00000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>cmdLogin</sender>
+        <signal>clicked()</signal>
+        <receiver>DlgMain</receiver>
+        <slot>cmdLogin_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>cmdLogout</sender>
+        <signal>clicked()</signal>
+        <receiver>DlgMain</receiver>
+        <slot>cmdLogout_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>cmdQuit</sender>
+        <signal>clicked()</signal>
+        <receiver>DlgMain</receiver>
+        <slot>cmdQuit_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>txtPassword</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>DlgMain</receiver>
+        <slot>txtPassword_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>txtPassword</sender>
+        <signal>returnPressed()</signal>
+        <receiver>DlgMain</receiver>
+        <slot>txtPassword_returnPressed()</slot>
+    </connection>
+    <connection>
+        <sender>cmdHelp</sender>
+        <signal>clicked()</signal>
+        <receiver>DlgMain</receiver>
+        <slot>cmdHelp_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>cmdAbout</sender>
+        <signal>clicked()</signal>
+        <receiver>DlgMain</receiver>
+        <slot>cmdAbout_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">dlg_main.ui.h</include>
+</includes>
+<slots>
+    <slot>cmdLogin_clicked()</slot>
+    <slot>cmdLogout_clicked()</slot>
+    <slot>cmdQuit_clicked()</slot>
+    <slot>txtPassword_textChanged( const QString &amp; )</slot>
+    <slot>txtPassword_returnPressed()</slot>
+    <slot>mnuPopupQuit_clicked()</slot>
+    <slot>cmdHelp_clicked()</slot>
+    <slot>cmdAbout_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

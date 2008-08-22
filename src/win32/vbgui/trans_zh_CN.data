@@ -1,0 +1,487 @@
+"MyTunet thinks that your IP is not correct. If you are sure that you are right, please contact with the authors or update your MyTunet."
+"MyTunet 认为你的IP地址不正确。如果你确认你是正确的，请与作者联系或更新您的MyTunet。"
+
+"Cancel this menu"
+"取消"
+
+"[GUI]   Username: "
+"[GUI]   用户名: "
+
+"MyTunet has detected that the 802.1x Authentication of Windows is active, which will be in conflict with TUNet 802.1x Authentication. Please close it manually. You can see MyTunet Help or TUNet Offical Website for details."
+"MyTunet 检测到你的 Windows 系统的 802.1x 端口认证已经打开, 这将与清华校园网的 802.1x 端口认证冲突. 请您手动关闭它. 具体细节，可以参考 MyTunet 的帮助，或者访问 TUNet 的官方主页."
+
+"IP Switcher"
+"IP 切换工具"
+
+"Windows 802.1x Logon"
+"Windows 802.1x 登录"
+
+"MyTunet"
+"MyTunet"
+
+"You can disable the AutoUpdate feature in MyTunet configuration."
+"你可以在 MyTunet 的配置里面禁止“自动更新”的特性"
+
+"Close"
+"关闭"
+
+"MyTunet AutoUpdate : "
+"MyTunet 自动更新 : "
+
+"Lastest Version:"
+"最新版本:"
+
+"Version Description"
+"版本描述"
+
+"Download URL"
+"下载地址"
+
+"Official URL"
+"官方地址"
+
+"MyTunet cannot get your network adapters!"
+"MyTunet 无法获得您的网卡设备列表!"
+
+"[802.1x] Reset!"
+"[802.1x] 重置!"
+
+", used: "
+", 已使用: "
+
+"[tunet]  The money has been used of your active connection : "
+"[tunet]  您的本次连接所花费的钱数 : "
+
+"Language"
+"语言"
+
+"Version:"
+"版本:"
+
+"Author:"
+"作者:"
+
+"Go to MyTunet Homepage for latest update!"
+"访问 MyTunet 主页，获取最新更新！"
+
+
+"<&Messages>"
+"<消息(&M)>"
+
+"Bug reporters:"
+"Bug 报告者:"
+
+"Art designers:"
+"艺术设计:"
+
+"Unable to install WinPCap. Please install it manually."
+"无法安装 WinPCap. 请手动安装."
+
+"Campus"
+"校园"
+
+"Domestic"
+"国内"
+
+"No Limitation"
+"无限制--国际"
+
+
+"MyTunet Ready"
+"MyTunet 就绪"
+
+"MyTunet Homepage"
+"MyTunet 主页"
+
+"802.1x Authenticating ..."
+"802.1x 正在端口认证…"
+
+"Tunet Authenticating ..."
+"Tunet 正在认证…"
+
+"MyTunet Online (Balance: "
+"MyTunet 在线 (余额: "
+
+"802.1x Authenticated"
+"802.1x 已经通过端口认证"
+
+"Error while loading translation data."
+"加载翻译数据时出错."
+
+"Save Last Logon Info"
+"保存上次登录信息"
+
+"About"
+"关于"
+
+"&About"
+"关于(&A)"
+
+"Thanks for their help to find bugs."
+"谢谢他们帮助找出Bugs."
+
+"Thanks for their help to design some of MyTunet GUI."
+"谢谢他们帮助设计了部分 MyTunet 的图形用户界面."
+
+"Great thanks to:"
+"特别感谢:"
+
+"MyTunetBackgroundWindow"
+"MyTunetBackgroundWindow"
+
+"&Configuration"
+"配置(&C)..."
+
+"Configuration"
+"配置"
+
+"Show Logs"
+"显示登录日志"
+
+"Very Very Important Logs"
+"非常非常重要的日志"
+
+"Very Important Logs"
+"非常重要的日志"
+
+"Important Logs"
+"重要的日志"
+
+"All logs"
+"全部日志"
+
+"Save raw logs to C:\MyTunet.txt"
+"保存原始日志到 C:\MyTunet.txt"
+
+"Auto-login after launch"
+"运行后自动连接"
+
+"Popup error messages"
+"弹出出错消息"
+
+"Hide the MyTunet window after logon"
+"登录后隐藏 MyTunet 窗口"
+
+"Autorun when Windows starts up"
+"在 Windows 启动后自动运行"
+
+"Shut-down Reminder at 22:55 on Sunday to Thursday"
+"关机提醒于周日至周四 22:55 (适用于紫荆公寓)"
+
+"and shut down the computer 2 min later (XP)"
+"并于 2 分钟后自动关机(仅 XP 系统有效)"
+
+"Automatically check the update of MyTunet"
+"自动检查更新"
+
+"Account List"
+"帐户列表"
+
+"Lowest balance protection:"
+"最低余额保护:"
+
+"Retry 802.1x Authentication when fail"
+"802.1x 端口认证失败后重试"
+
+"Use 802.1x Authentication"
+"使用 802.1x 端口认证"
+
+"Use MD5 to encrypt the password"
+"使用 MD5 加密密码"
+
+"Remove"
+"删除"
+
+"Save"
+"保存"
+
+"RMB"
+"RMB"
+
+"Limit:"
+"限制:"
+
+
+"Account:"
+"帐户:"
+
+"Password:"
+"密码:"
+
+"Username:"
+"用户名:"
+
+"Account name is invalid. Please check it."
+"帐户名无效，请检查"
+
+"(Current)"
+"(当前)"
+
+"中文"
+"中文"
+
+"English"
+"English"
+
+"802.1x Authentication"
+"802.1x 端口认证(紫荆公寓)"
+
+"E&xit"
+"退出(&X)"
+
+"&Help"
+"帮助(&H)"
+
+"Logou&t"
+"注销(&T)"
+
+"&Login"
+"登录(&L)"
+
+"Limitation:"
+"连网限制:"
+
+"Adapter:"
+"网卡:"
+
+"Popup"
+"Popup"
+
+"Show/Hide"
+"显示/隐藏"
+
+"Cancel Shutting-down"
+"取消关机!"
+
+"-"
+"-"
+
+"Finish Configuring"
+"结束配置"
+
+
+"--Account List--"
+"--帐户列表--"
+
+"Please input your username and password."
+"请输入您的用户名和密码."
+
+"Please input your username and password in MyTunet main window."
+"请在 MyTunet 主窗口中输入用户名和密码。"
+
+"[GUI] Logon configruation:"
+"[GUI] 登录配置:"
+
+"[GUI]   Network adapter: "
+"[GUI]   网络适配器（网卡）: "
+
+"[GUI]   Network adapter name: "
+"[GUI]   网络适配器名: "
+
+"[GUI]   MAC: "
+"[GUI]   MAC地址: "
+
+"[GUI]   IP: "
+"[GUI]   IP地址: "
+
+"[GUI]    Retry to start 802.1x ..."
+"[GUI]    重试启动 802.1x 端口认证..."
+
+"[GUI]    Retry to start tunet ..."
+"[GUI]    重试启动 tunet ..."
+
+"[802.1x] Starting ..."
+"[802.1x] 启动中 ..."
+
+"[802.1x] Failed to start 802.1x, error occurs when : "
+"[802.1x] 启动 802.1x 失败, 错误发生在 : "
+
+"[802.1x] Stopped!"
+"[802.1x] 已经停止!"
+
+
+"[802.1x] Stopping ..."
+"[802.1x] 停止中 ..."
+
+"[802.1x] Sent logout request."
+"[802.1x] 已发送注销请求."
+
+"[802.1x] Sent logon request."
+"[802.1x] 已发送登录请求."
+
+"[802.1x] Sent username."
+"[802.1x] 已发送用户名."
+
+"[802.1x] Sent authentication data."
+"[802.1x] 已发送认证数据."
+
+"[802.1x] Received request from server ..."
+"[802.1x] 从服务器收到请求 ..."
+
+"[802.1x] Received authentication request from server ..."
+"[802.1x] 从服务器收到认证请求 ..."
+
+"[802.1x] Received response from server (unexpected for TUNet)..."
+"[802.1x] 收到服务器回应 (非预期的TUNet数据)..."
+
+"[802.1x] SUCCESS! The port has been opened"
+"[802.1x] 成功! 端口已经被打开"
+
+"[802.1x] LOGOUT! The port has been closed"
+"[802.1x] 注销! 端口已经被关闭"
+
+"[802.1x] FAILURE! Authentication failed"
+"[802.1x] 失败! 登录认证失败"
+
+"[802.1x] UNKNOWN EAP Packet"
+"[802.1x] 未知的 EAP 包"
+
+"[802.1x] Unexpected packet: DOT1X_RECV_START"
+"[802.1x] 非预期的数据包: DOT1X_RECV_START"
+"[802.1x] Unexpected packet: DOT1X_RECV_LOGOFF"
+"[802.1x] 非预期的数据包: DOT1X_RECV_LOGOFF"
+"[802.1x] Unexpected packet: DOT1X_RECV_KEY"
+"[802.1x] 非预期的数据包: DOT1X_RECV_KEY"
+"[802.1x] Unexpected packet: DOT1X_RECV_ASF_ALERT"
+"[802.1x] 非预期的数据包: DOT1X_RECV_ASF_ALERT"
+"[802.1x] Unexpected packet: DOT1X_RECV_UNKNOWN"
+"[802.1x] 非预期的数据包: DOT1X_RECV_UNKNOWN"
+
+
+"[tunet]  A network error occurs when : "
+"[tunet]  网络错误发生在 : "
+
+"[tunet]  Sending logon request ..."
+"[tunet]  发送登录请求 ..."
+
+"[tunet]  Receiving WELCOME data ..."
+"[tunet]  接收 WELCOME 数据 ..."
+
+"[tunet]  Receiving REMAINING data ..."
+"[tunet]  接收 REMAINING 数据 ..."
+
+"[tunet]  Welcome Message:"
+"[tunet]  欢迎消息:"
+
+"[tunet]  Logon Error:"
+"[tunet]  登录错误:"
+
+"[tunet]  Replying WELCOME data ..."
+"[tunet]  应答 WELCOME 数据 ..."
+
+"[tunet]  Keep-alive server is : "
+"[tunet]  保持活动服务器是 : "
+
+"[tunet]  Logon Message:"
+"[tunet]  登录消息:"
+
+"[tunet]  Message server is : "
+"[tunet]  消息服务器是 : "
+
+"[tunet]  Your balance of your account is : "
+"[tunet]  您的帐户余额是 : "
+
+"[tunet]  The IPs of your logons are : "
+"[tunet]  您的IP登录状况是 : "
+
+"[tunet]  The time of server is : "
+"[tunet]  服务器时间是 : "
+
+"[tunet]  The last time when you logon is : "
+"[tunet]  您的上次登录时间是 : "
+
+"[tunet]  Finished the connection with message server."
+"[tunet]  完成与消息服务器的通信."
+
+"[tunet]  Receiving keep-alive data ..."
+"[tunet]  接收保持活动的数据 ..."
+
+"[tunet]  Keep-alive confirm is required, reply it ..."
+"[tunet]  保持活动的确认请求需要被应答，应答 ..."
+
+"[tunet]  Keepalive Error : "
+"[tunet]  保持活动错误 : "
+
+"[tunet]  Unexpected packet when keeping-alive"
+"[tunet]  在保持活动中遇到未知数据包"
+
+"[tunet]  Sending logout request ..."
+"[tunet]  发送注销请求 ..."
+
+"[tunet]  Receiving logout data ..."
+"[tunet]  接收注销数据 ..."
+
+"[tunet]  Logout Message :"
+"[tunet]  注销消息 :"
+
+"[tunet]  Starting tunet thread ..."
+"[tunet]  启动 tunet 线程 ..."
+
+"[tunet]  Exiting tunet thread ..."
+"[tunet]  退出 tunet 线程 ..."
+
+"[tunet]  An error occurs!"
+"[tunet]  发生了错误!"
+
+"[tunet]  Your logon has been logged-out"
+"[tunet]  您的登录已经注销"
+
+"[tunet]  Stopped!"
+"[tunet]  已经停止!"
+
+"[tunet]  Reset!"
+"[tunet]  重置!"
+
+"[tunet]  Stopping ..."
+"[tunet]  正在停止 ..."
+
+"[tunet]  Starting ..."
+"[tunet]  正在启动 ..."
+
+"MyTunet Error Message"
+"MyTunet 出错消息"
+
+"Fail to authenticate your 802.1x port."
+"无法通过您的 802.1x 端口认证."
+
+"Lowest Balance Reached! Lowest Balance Protection! Logout!"
+"帐户余额到达最低限额! 最低限额保护! 注销!"
+
+"Minutes"
+"分钟"
+
+"Another MyTunet or Tunet is running."
+"另一个 MyTunet 或者 Tunet 正在运行中."
+
+"Install as service"
+"安装为服务"
+
+"If you don't know what a Service is, do not use this function. It is only intended for advanced users. For further information, please refer to Help."
+"如果您不了解“服务”(Service)是什么，请不要使用这个功能。本功能仅供高级用户使用。欲知更多信息，请参考帮助。"
+
+"Install MyTunet service"
+"安装 MyTunet 服务"
+
+"Remove MyTunet service"
+"删除 MyTunet 服务"
+
+"Start service"
+"启动服务"
+
+"Stop service"
+"停止服务"
+
+"Save the logon information"
+"保存这些登录信息"
+
+"MyTunet service will use your last logon information for the future logons."
+"MyTunet 服务将使用您的最后一次登录信息进行未来的登录。"
+
+"HINTS: MyTunet service don't have the features like 'Lowest balance protection' !"
+"提示：MyTunet 服务没有像“最低余额警告保护”这样的特性。"
+
+"MyTunetSvc doesn't run correctly."
+"MyTunetSvc 无法正常运行。"
+
+"[MyTunet Service] "
+"[MyTunet 服务] "

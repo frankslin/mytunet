@@ -1,0 +1,56 @@
+LIBRARY MyTunetDLL
+
+EXPORTS
+	MyTunetCreateMutex
+	MyTunetIsWirelessSvcRunning
+
+	MyTunetSvcGetLogByMailSlot
+	MyTunetSvcCreateLogsMailSlot
+
+	GetEthcardInfo
+	GetEthcardCount
+
+	MyTunetSetUserConfig
+	MyTunetSetUserConfigDot1x
+	MyTunetGetUserConfigLimitation
+
+	Dot1xStart
+	Dot1xStop
+	Dot1xGetState
+	Dot1xIsTimeout
+	Dot1xReset
+
+	TunetStart
+	TunetStop
+	TunetIsKeepaliveTimeout
+	TunetGetState
+	TunetReset
+
+	MyTunetLogFetch
+	MyTunetLogFree
+	MyTunetLog_GetStringLen 
+	MyTunetLog_GetString   
+	MyTunetLog_GetDataLen 
+	MyTunetLog_GetData   
+	MyTunetLog_GetTag   
+
+	ProtectData
+	UnprotectData
+	FreeDataBlob
+	DataBlob_GetData
+	DataBlob_GetLen
+	
+
+	MyTunetSvcSetUserConfig
+	MyTunetSvcSetUserConfigDot1x
+
+	MyTunetSvcInstall
+	MyTunetSvcRemove
+	MyTunetSvcStart
+	MyTunetSvcStop
+	MyTunetSvcLogin
+	MyTunetSvcLogout
+	MyTunetSvcGetState
+	MyTunetSvcIsInstalled
+
+

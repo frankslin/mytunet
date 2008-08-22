@@ -1,0 +1,21 @@
+[OPTIONS]
+Compatibility=1.1
+Display compile progress=yes
+Language=0x804 Chinese (ÖÐ¹ú)
+Default Window=win
+Compiled file=mytunet.chm
+Binary Index=No
+Default topic=Overview.htm
+Error log file=Errlog.txt
+[WINDOWS]
+win="MyTunet °ïÖú","mytunet1.hhc","mytunet1.hhk","Overview.htm","Overview.htm",,,,,0x40120,,0x304E,[100,100,850,574],0x0,0x0,,0,,,
+[FILES]
+guide.htm
+howto_accounts.htm
+howto_service.htm
+overview.htm
+picture.htm
+qa_icons.htm
+qa_safty.htm
+qa_thunet.htm
+qa_env.htm
