@@ -1,5 +1,3 @@
-<?PHP include("counter/counter.php"); ?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML><HEAD><TITLE>MyTunet - 清华校园网登录客户端</TITLE>
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
@@ -18,6 +16,7 @@
 <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
   <TBODY>
   <TR>
+
     <TD align=middle width=291 height=88><img src="images/mytunet_logo.gif" alt="Mytunet Logo" width="263" height="79"></TD>
     <TD width=479 height=88 valign="bottom" style="background:white url(images/topbg.jpg) repeat-y top right;"><h1>清华大学校园网客户端</h1></TD>
   </TR></TBODY></TABLE>
@@ -27,6 +26,7 @@
     <TD class=sidebar vAlign=top width=133 height=400><BR>
       <TABLE cellSpacing=2 cellPadding=2 width=118 align=center border=0>
         <TR>
+
           <TD><span class="style3">最新版本2005.12.31</span></TD>
         </TR>
         <TR>
@@ -35,12 +35,14 @@
         </TR>
         <TR>
           <TD><A href="#download">下载与安装</A><br>
-            ><a href="/down/mytunet-lite.zip" class="emphlink">简洁版</a> <a href="/down/mytunet-full.zip" class="emphlink">完整版</a></TD>
+
+		  &gt;<a href="/down/mytunet-lite.zip" class="emphlink">简洁版</a> <a href="/down/mytunet-full.zip" class="emphlink">完整版</a><br /> <a href="/down/mytunet_for_vista.zip" class="emphlink">Windows Vista版</a></TD>
         </TR>
         <TR>
           <TD><a href="#faq">常见问题</a></TD>
         </TR>
         <TR>
+
           <TD><A href="/guestbook/" 
             target=_blank>留言簿</A></TD>
         </TR>
@@ -50,28 +52,25 @@
         </TR>
         <TR>
           <TD><a href="#anounce">声明</a></TD>
+
         </TR>
         <TR>
           <TD><a href="#link">友情链接</a></TD>
         </TR>
 	<TR>
-          <td><?PHP echo "Total Visitors: $count"; ?>
-<!-- phpmyvisites -->
+          <td>
+<!-- google analytics -->
 <script type="text/javascript">
-<!--
-var a_vars = Array();
-var pagename='mainpage';
-var phpmyvisitesSite = 1;
-var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
-//-->
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
-<script language=javascript src="http://www.mytunet.com/phpmv2/phpmyvisites.js" type="text/javascript"></script>
-<noscript>
-<p>phpMyVisites : 一个用PHP/MySQL技术开发，采用Gnu GPL.方式发布的关于网站访问量统计的开源软件
-<img src="http://www.mytunet.com/phpmv2/phpmyvisites.php" alt="phpMyVisites" style="border:0" />
-</p>
-</noscript>
-<!-- /phpmyvisites --> 
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-254720-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+</script>
+<!-- /google analytics --> 
           </td>
 	</TR>
       </TABLE>
@@ -80,10 +79,13 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
       <TABLE cellSpacing=2 cellPadding=2 width="90%" align="center" border="0">
         <tr><td>&nbsp;</td></tr>
 		<TR>
-          <TD bgcolor="#CC9900"><p>据悉，学校在一段时间之后将启用新的校园网登录系统，并采用新的认证协议。届时，当前的 MyTunet 将不再适用。如果我们有精力且认为有意义开发新版本 MyTunet，我们可能还会继续对它进行更新。否则，我们将不再提供 MyTunet 的更新。</p>
+
+	  <TD bgcolor="#CC9900"><p>据悉，学校在一段时间之后将启用新的校园网登录系统，并采用新的认证协议。届时，当前的 MyTunet 将不再适用。如果我们有精力且认为有意义开发新版本 MyTunet，我们可能还会继续对它进行更新。否则，我们将不再提供 MyTunet 的更新。</p>
+            <p> Windows Vista 适用的 MyTunet 版本请从<a href="/down/mytunet_for_vista.zip">此处</a>下载。 </p>
             <p> 谢谢您对 MyTunet 一如既往的认可与支持。</p></TD>
 		</TR>
 	  </TABLE>
+
       <H1><A id=introduction name=introduction></A><IMG height=48 
       src="images/icon_intro.gif" width=48 align=absMiddle> 
         简介</H1>
@@ -93,6 +95,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
           <TD>
             <H4><STRONG>什么是 MyTunet？</STRONG></H4></TD></TR>
         <TR>
+
           <TD height="84">
             <P>MyTunet 是一个能方便你使用清华大学校园网的工具。有了 MyTunet，登录校园网、切换登录账号等任务将变得非常轻松。你不再需要先注销，改登录类型，输入新的用户名，输入新的密码——MyTunet 将自动为你的完成这些繁琐的步骤。如果你是一名住在紫荆公寓的本科生，并且使用着台式电脑，那么你更可以启用“熄灯提醒”功能。开启此项功能后，每到熄灯前 5 分钟，会弹出一个对话框提示你关机。</P></TD></TR></TBODY></TABLE>
       <TABLE cellSpacing=2 cellPadding=2 width="90%" align=center border=0>
@@ -101,6 +104,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
           <TD>
             <H4><STRONG>MyTunet 的特点</STRONG></H4></TD></TR>
         <TR>
+
           <TD height="148"><UL><LI>官方 TUNet 所具有的基本功能（如登录网络等）                            
               <LI>                中/英文双语言界面              
               <LI>自动安装驱动程序              （特色功能）
@@ -110,6 +114,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
               <LI>                最低余额警告保护              
               <LI>                可以提供详细的登录反馈信息。准确了解自己网络的状况              
               <LI>                适用于紫荆本科生宿舍的“熄灯”制度的关机提醒功能<br>
+
               </UL></TD></TR></TBODY></TABLE>
       <TABLE cellSpacing=2 cellPadding=2 width="90%" align=center border=0>
         <TBODY>
@@ -118,6 +123,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
             <H4><STRONG>MyTunet / qtunet 界面截图</STRONG></H4></TD></TR>
         <TR>
           <TD><img src="images/mytunet_win32_screenshot.gif" alt="MyTunet for Windows Screenshot" width="349" height="343">            <img src="images/qtunet_screenshot.gif" alt="Qtunet Screenshot"></TD>
+
         </TR></TBODY></TABLE>
       <H1><A id=download name=download></A><IMG height=48 
       src="images/icon_download.gif" width=48 align=absMiddle> 
@@ -127,6 +133,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
         <TR>
           <TD><h4><strong>如何安装</strong></h4></TD>
         </TR>
+
         <TR>
           <TD><p>MyTunet 无需安装。只需到 MyTunet 维护网站下载压缩包文件，解压缩到任何目录后即可运行。当然，我们建议您将它放在 C:\Program   Files\MyTunet 中。
             </p>
@@ -135,25 +142,30 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
         </TR>
         <TR>
           <TD><H4><STRONG>最新版本</STRONG></H4></TD>
+
         </TR>
         <TR>
           <TD><P><SPAN class=download-title><a href="/down/mytunet-lite.zip">MyTunet for Windows 简洁版</a></SPAN> [2005年12月31日] [944 KB] </P>
               <P><SPAN class=download-title><a href="/down/mytunet-full.zip">MyTunet for Windows 完整版</a></SPAN> [2005年12月31日] [1.14 MB]<BR>
                 完整版是在简洁版的基础上，增加了“IP地址切换”和“Windows 802.1x 认证计算器”两个小工具后，重新打包而成的。 </P>
+
             <P><SPAN class=download-title><a href="/down/mytunet">MyTunet for Linux</a> </SPAN> [2005年12月09日] [795 KB] <span class="style3">请先<a href="linux.html" target="_blank">阅读说明</a></span></P>
             <P><SPAN class=download-title><a href="/down/qtunet">qtunet for Linux 图形界面</a></SPAN> [2005年12月09日] [0.99 MB] <span class="style3">请先<a href="linux.html" target="_blank">阅读说明</a></span></P></TD>
         </TR>
+
         <TR>
           <TD>
             <H4><STRONG><A id=drivers name=drivers></A>驱动程序</STRONG></H4></TD></TR>
         <TR>
           <TD><p>以下内容来自 <a href="http://www.winpcap.org" target="_blank">http://www.winpcap.org</a>。WinPCap 是 MyTunet 的驱动程序。通常情况下，MyTunet 会自动调用驱动程序，因此您无须单独下载、安装以下文件。只有当您遇到严重的错误时才需要手动安装。</p>
             <P><SPAN class=download-title><a href="/SystemFiles/WinPcap_3_1.exe">WinPCap 3.1 安装文件</a></SPAN> [456 KB]</P>
+
             <P>稳定版本，但不支持 64 位操作系统。本文件来自 <a href="http://www.winpcap.org/install/bin/WinPcap_3_1.exe" target="_blank">http://www.winpcap.org/install/bin/WinPcap_3_1.exe</a>。</P>
             <P><SPAN class=download-title><a href="/SystemFiles/WinPcap_3_2_alpha1.exe">WinPCap 3.2 alpha1 安装文件</a></SPAN> [475 KB]<BR>
               测试版本，支持 64 位操作系统。
             如果您使用 AMD 64 CPU，且曾经遇到无法使用 MyTunet 的问题，请安装本程序。本文件来自 <a href="http://www.winpcap.org/install/bin/WinPcap_3_2_alpha1.exe" target="_blank">http://www.winpcap.org/install/bin/WinPcap_3_2_alpha1.exe</a>。</P>            </TD></TR>
         </TBODY></TABLE>
+
       <H1><A id=faq name=faq></A><img src="images/icon_question.gif" alt="FAQ" width="48" height="48"> 常见问题 </H1>
       <table cellspacing=2 cellpadding=2 width="90%" align=center border=0>
         <tr>
@@ -161,6 +173,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
         </tr>
         <tr>
           <td><p>所有网络通信，MyTunet 与官方 TUNet 完全一致。在网络通信的数据流上， MyTunet 和官方 TUNet 的安全性等价。</p>
+
               <p>保存密码登录时，MyTunet 并不保存用户的原始密码。原始密码在第一次被输入后就被立刻从内存中销毁，登录全过程中不再需要原始密码（官方 TUNet   也是如此）。当然， MyTunet 必须保留通过原始密码生成的一些信息，MyTunet 会把这些信息通过 Windows   Crypt 加密系统进行加密，加密方式是与当前 Windows 用户相关联的。也就是说，只有当前的 Windows 用户才可获得这些敏感信息，并可保证这些信息不被恶意窃取。</p></td>
         </tr>
         <tr>
@@ -176,6 +189,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
               <li>如果图标稳定显示（无闪烁），表示已经完成了这个操作。
               <li>如果图标在闪烁，则表示这个操作正在进行中。
               </ul></td>
+
         </tr>
         <tr>
           <td><h4>如何使用多帐户快速切换功能？</h4></td>
@@ -188,16 +202,19 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
                 <li><strong>用户帐户</strong>：一个帐户保存着一个套登录信息。包括用户名、密码、登录方式等等。
                 <li><strong>当前帐户</strong>：就是在 MyTunet 主界面里显示的一系列登录信息。注意！当前帐户并不是一个永久的帐户。每次选不同的用户帐户登录后，当前帐户的信息都是这个用户帐户的信息。而且，修改当前帐户的信息并不改变任何用户帐户信息。简单地说，当前帐户只是进行最后一次 登录的用户帐户的一个拷贝。　
               </ul>
+
               <p>如果您想进一步弄清这个问题，只要试一试就可以了:) 现在切入正题：</p>
             <p><strong>1. 添加/删除/修改 用户帐户。</strong></p>
             <p>点“配置”按钮，进入“配置”对话窗。其中“帐户列表”就是用于管理用户帐户的。</p>
             <p><strong>建立新帐户</strong>：在“帐户”输入框里输入帐户名（这个随便了，可以自己起名字）。然后输入“用户名”“密码”等信息，并点“保存”，这个用户帐户就建立了。</p>
             <p><strong>删除帐户</strong>：在“帐户”下拉列表里选一个想删除的用户帐户，然后点“删除”，就这么简单。</p>
+
             <p><strong>修改帐户</strong>：在“帐户”下拉列表里选一个想修改的用户帐户，然后修改所需要修改的信息，修改完后千万别忘了点“保存”哦！</p>
             <p><strong>2. 快速切换帐户登录。</strong></p>
             <p><strong>方法一</strong>：在 Windows 任务栏托盘区（就是右边的那些图标区，用鼠标右键点 MyTunet 的图标，在“帐户列表”里选一个就可以了。</p>
             <p><strong>方法二</strong>：在 MyTunet 主界面里也可以切换登录帐户。点“用户名”下拉框，然后可以看到一些帐户列表，选一个，则 MyTunet 会把选择的这个用户帐户的登录信息拷贝成当前帐户。然后再点登录就可以了。</p>
             <p> 两种方法有什么不同呢？如果您已经登录了，方法一不需要注销就可以直接切换，而方法二则必须先点“注销”后才能再“登录”。</p></td>
+
         </tr>
         <TR>
           <TD><H4><STRONG>MyTunet 运行时提示“无法找到 mytunetdll.dll” ，怎么处理？</STRONG></H4></TD>
@@ -206,6 +223,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
           <TD><P>可能是因为驱动程序没有成功安装造成的。
 虽然 MyTunet 会自动尝试安装驱动程序，但在个别机器上仍可能会安装失败。可以尝试如下解决方案：</P>
               <p> (1) 下载最新的 MyTunet 并解压缩到新的目录（不要覆盖原来的，否则容易出现问题）</p>
+
               <p> (2) 如果仍然有问题，请到 http://www.mytunet.com 下载 WinPCap 的驱动程序并安装
                 （注：这个文件的一个较旧版本在官方 TUNet\drivers 目录中也存在，理论上，安装后应该解决所有问题）</p>
               <p> (3) 如果还有问题，可以手动删除以前安装的驱动程序：
@@ -218,6 +236,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
 				然后再安装 WinPCap 的<a href="#drivers">驱动程序</a>，或者运行 MyTunet 以自动安装驱动程序。
 				</p>
                 <p> (4) 如果仍然有问题，请<a href="#contact">联系我们</a>。</p></TD>
+
         </TR>
         <TR>
           <TD><H4><STRONG>MyTunet 运行时提示“无法获取网卡列表” ，怎么解决？</STRONG></H4></TD>
@@ -225,6 +244,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
         <TR>
           <TD><P> 很可能您正在使用 64位 AMD 处理器和 Windows XP，并不幸地遇到了 MyTunet 的 bug。
 请及时将错误的具体情况<a href="#contact">反馈给我们</a>。或者，您可以简单地从 http://www.mytunet.com 下载一份 WinPCap for AMD64 的<a href="#drivers">驱动程序</a>。</P>
+
             </TD>
         </TR>
         <tr>
@@ -234,6 +254,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
           <td><p>首先解释一下什么是服务（如果您很熟悉，请跳过这一段）：服务程序是一种特殊的 Windows 程序，它可以在系统刚启动的时候就被运行。也就是说，哪怕用户还没   登录Windows，只要开机，服务程序就会自动运行。这种程序一般用于提供网络服务等，所以就叫“服务（Service）”了。</p>
               <p>MyTunet 目前支持安装为一个服务，其服务程序是 MyTunetSvc.exe，安装成功后服务名是“   MyTunetSvc”。
                 当然，您并不需要知道它到底是如何工作的，在 MyTunet 的主界面中，您可以轻松完成对 MyTunet 服务的各种操作。 </p>
+
             <p>先说明一个基本问题： MyTunet 的普通应用模式和服务模式是不能同时启用的。也就是说，如果你安装了 MyTunetSvc 服务，那么 MyTunet 的所有操作都会依靠服务来进行，而不再是在主程序里进行操作了。</p>
             <p>并且，安装 MyTunetSvc 服务后，与普通模式会有以下不同：</p>
             <ul>
@@ -241,6 +262,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
               <li> 不再支持“最低余额警告保护”功能。              
               <li> 对登录认证的各种重试操作都不再依靠用户设置，而由服务自己决定。              
               <li> MyTunet   主程序只起到“控制器”的作用，即只负责控制服务的运行，而不再亲自过问连网事宜。<br>
+
                 仅退出 MyTunet   主程序并不会中断当前的连网，想中断当前连网，必须点击主程序上的“注销”按钮，或停止 MyTunetSvc 服务。
               </ul>
             <p>安装 MyTunetSvc 服务的操作很简单，点“配置”，再点“安装 MyTunet 服务”即可。服务安装后，即可在 MyTunet   主程序中对服务进行控制。 </p>
@@ -250,12 +272,14 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
       </table>
       <H1><A id=contact name=contact></A><IMG height=48 
       src="images/icon_contact.gif" width=48 align=absMiddle> 联系</H1>
+
       <TABLE cellSpacing=2 cellPadding=2 width="90%" align=center border=0>
         <TBODY>
         <TR>
           <TD><p>如果您发现了软件的 bug，或还有其他不明白的事项，都可以联系我们的技术支持人员，我们将尽最大努力为你解释清楚。如果您对本软件有什么建议或新奇的想法，也请告诉我们。推荐使用 <a href="http://talk.google.com/" target="_blank">Google Talk</a> 与我们联系。</p>
-            <p> Chice <img src="images/email_img1.png">, Frank Woods <img src="images/email_img2.png"> <br> 
+            <p> Chice <img src="images/email_img1.png">, Frank <img src="images/email_img2.png"> <br> 
             </p></TD></TR></TBODY></TABLE>
+
       <h1><A id="anounce" name="anounce"></A><img src="images/icon_thank.gif" alt="faq" width="48" height="48"> MyTunet 软件声明</h1>
       <table cellspacing=2 cellpadding=2 width="90%" align=center border=0>
         <tbody>
@@ -265,6 +289,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
                   MyTunet 的使用条款，请您务必仔细阅读。如果您不同意下面条款中的任何一项，请不要开始或立即停止使用 MyTunet。一旦您使用了
                   MyTunet 软件，则意味着您对本声明的全部内容的接受与理解。</p>
                 <p>著作权</p>
+
                 <p>MyTunet 的编写是以研究和学习为目的的，著作权归属软件作者所有。著作权人保留所有权利。<br>
                   TUNet 的作者是清华大学信息网络工程研究中心。</p>
                 <p>安全与隐私</p>
@@ -274,6 +299,7 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
                 MyTunet 项目组并不对此作任何保证。</p>
                 <p>MyTunet 采用可能与&quot;清华大学校园网官方客户端工具&quot;（简称&quot;TUNet&quot;）相同的网络协议。根据 TUNet
                 官方网站中的说明，清华大学校园网采用的登录认证协议、计费系统是安全的。理论上，MyTunet 的安全性与 TUNet 等价。</p>
+
                 <p>免责条款</p>
                 <p>MyTunet 项目组致力于使 MyTunet 更加安全、易用和具有更强的兼容性。但是 MyTunet 项目组不保证MyTunet
                 可以在任何计算机上正常地运行。除此以外，MyTunet 项目组对可能因使用 MyTunet 造成的任何其他软硬件问题不承担责任。</p>
@@ -282,11 +308,13 @@ var phpmyvisitesURL = "http://www.mytunet.com/phpmv2/phpmyvisites.php";
         </tbody>
       </table>
       <h1><A id=acknowledge name=link></A><img src="images/icon_link.gif" alt="link" width="48" height="48"> 友情链接</h1>
+
       <table cellspacing=2 cellpadding=2 width="90%" align=center border=0>
         <tbody>
           <tr>
             <td><p>感谢 <a href="http://net9.org" target="_blank">net9.org</a> 提供主页空间。界面设计参考了 Snaileo 做的 <a href="http://alumni.ipcn.org" target="_blank">Alumni 校友录客户端</a>软件主页。</p>
               <p><a href="http://music.trueice.net" target="_blank">TrueIce 流行音乐在线 </a></p>
+
               <p><br>
               </p>
               </td>
@@ -309,6 +337,7 @@ google_color_text = "6F6F6F";
 <script type="text/javascript"
   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+
 <script type="text/javascript"><!--
 google_ad_client = "pub-8341499184958007";
 google_ad_width = 180;
