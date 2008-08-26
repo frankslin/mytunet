@@ -1,10 +1,13 @@
+#ifdef _BSD
+#define _BPF
+#endif
 #ifdef _BPF
 
 #include "ethcard.h"
 
 #define ETHERTYPE_8021X 0x888e
 
-static static struct bpf_insn insns[] = {
+static struct bpf_insn insns[] = {
 	BPF_STMT(BPF_LD+BPF_H+BPF_ABS, 12),//加载halfword以太网链路层的type
 	BPF_JUMP(BPF_JMP+BPF_JEQ+BPF_K, ETHERTYPE_8021X, 0, 1),//判断是否是802.1X数据包，是则返回给本程序
 	BPF_STMT(BPF_RET+BPF_K, (u_int)-1),
@@ -23,15 +26,16 @@ INT   get_ethcard_iface_byname(int sd, CHAR *name)
 	strncpy(req.ifr_name,name,IFNAMSIZ);
 	ret=ioctl(sd,SIOCGIFINDEX,&req);
 	if (ret==-1) return -1;
-	return req.ifr_ifindex;
+	return req.ifr_index;
 }
-
 
 INT get_ethcards(ETHCARD_INFO *devices, INT bufsize)
 {
-	int fd, i, count = 0;
-	struct ifreq buf[MAX_ETHCARDS];
+	int fd, i = 0;
+	char* buf[MAX_ETHCARDS * sizeof(struct ifreq)];
 	struct ifconf ifc;
+	struct ifreq *ifrp, *ifend, *ifnext;
+	int n;
 
 	if ((fd = socket(AF_INET, SOCK_DGRAM, 0)) >= 0) 
 	{
@@ -39,26 +43,41 @@ INT get_ethcards(ETHCARD_INFO *devices, INT bufsize)
 		ifc.ifc_buf = (caddr_t)buf;
 		if (!ioctl(fd, SIOCGIFCONF, (char *) &ifc)) 
 		{
-			count = ifc.ifc_len / sizeof(struct ifreq);
-			i = count;
-			while (i-- > 0)
+//			count = ifc.ifc_len / sizeof(struct ifreq);
+//			i = count;
+//			while (i-- > 0)
+			ifrp = (struct ifreq *)buf;
+			ifend = (struct ifreq *)(buf + ifc.ifc_len);
+			for (; ifrp < ifend; ifrp = ifnext)
 			{
-				strcpy(devices[i].name, buf[i].ifr_name);
-				strcpy(devices[i].desc, buf[i].ifr_name);
+				n = ifrp->ifr_addr.sa_len + sizeof(ifrp->ifr_name);
+				if (n < sizeof(*ifrp))
+					ifnext = ifrp + 1;
+				else
+					ifnext = (struct ifreq *)((char *)ifrp + n);
+				if (!(*ifrp->ifr_name))
+					break;
+				if (ifrp->ifr_addr.sa_family != AF_INET)
+					continue;
+				if (bufsize / sizeof(ETHCARD_INFO) == i)
+					break;
+				strcpy(devices[i].name, ifrp->ifr_name);
+				strcpy(devices[i].desc, ifrp->ifr_name);
 				
 				/*Jugde whether the net card status is up*/
-				if (!(ioctl(fd, SIOCGIFFLAGS, (char *) &buf[i])))
+				if (!(ioctl(fd, SIOCGIFFLAGS, (char *) ifrp)))
 				{
-					devices[i].live = (buf[i].ifr_flags & IFF_UP);
+					devices[i].live = (ifrp->ifr_flags & IFF_UP);
 				}
 				
 				/*Get IP of the net card */
-				if (!(ioctl(fd, SIOCGIFADDR, (char *) &buf[i]))) 
+				if (!(ioctl(fd, SIOCGIFADDR, (char *) ifrp))) 
 				{
-					strcpy(devices[i].ip, inet_ntoa(((struct sockaddr_in *) (&buf[i].ifr_addr))->sin_addr));
+					strcpy(devices[i].ip, inet_ntoa(((struct sockaddr_in *) (&ifrp->ifr_addr))->sin_addr));
 				}
 
 				
+#ifndef _BSD
 				/*Get HW ADDRESS of the net card */
 				if (!(ioctl(fd, SIOCGIFHWADDR, (char *) &buf[i])))
 				{
@@ -72,12 +91,49 @@ INT get_ethcards(ETHCARD_INFO *devices, INT bufsize)
 						(unsigned char) buf[i].ifr_hwaddr.sa_data[5]
 						);
 				}
+#else
+				struct ifaddrs *list;
+				struct ether_addr *ea;
+				if(getifaddrs(&list) >= 0)
+				{
+					struct ifaddrs *cur;        
+					for(cur = list; cur != NULL; cur = cur->ifa_next)
+					{
+					if(cur->ifa_addr->sa_family != AF_LINK)
+						continue;
+					if (strncmp(cur->ifa_name, ifrp->ifr_name, IFNAMSIZ) == 0)
+					{
+						struct sockaddr_dl *sdl;
+						sdl = (struct sockaddr_dl *)cur->ifa_addr;
+		                ea = (const struct ether_addr *)LLADDR(sdl);
+					}
+				} 
+					snprintf(devices[i].mac, sizeof(devices[i].mac),
+					    "%02x %02x %02x %02x %02x %02x",
+						(unsigned char) ea->octet[0],
+						(unsigned char) ea->octet[1],
+						(unsigned char) ea->octet[2],
+						(unsigned char) ea->octet[3],
+						(unsigned char) ea->octet[4],
+						(unsigned char) ea->octet[5]
+						);
+					freeifaddrs(list);
+				}
+
+#endif
+#if 0
+				printf("%d. %s size: %d\n", i, ifrp->ifr_name, n);
+				printf("%s\n", devices[i].ip);
+				printf("UP: %s\n", devices[i].live? "true" : "false");
+				printf("ether addr: %s\n", devices[i].mac);
+#endif
+				i++;
 			}
 		} 
 	}
 	close(fd);
 
-	return count;
+	return i;
 }
 
 
@@ -85,7 +141,7 @@ INT get_ethcards(ETHCARD_INFO *devices, INT bufsize)
 
 INT		ethcard_send_packet(ETHCARD *ethcard, BYTE *buf, INT len)
 {
-    write(ethcard->fd, buf, len);
+    return write(ethcard->fd, buf, len);
 }
 
 
@@ -121,7 +177,7 @@ static THREADRET raw_socket_loop_thread(THREAD *self)
 			
 			if(len > 0)
 			{
-				p.proc(p.ethcard, pkt_data, recvlen);
+				p.proc(p.ethcard, pkt_data, len);
 			}
 			else
 			{
@@ -201,23 +257,53 @@ ETHCARD *ethcard_open(char *name)
         
 	if( bpf == -1 )
 	{
-		dprintf("open /dev/bpf%d error", i);
+		dprintf("open /dev/bpf%d error\n", i);
 		return NULL;
 	}
 	
 	strcpy(ifr.ifr_name, name);
+	struct timeval timeout;
+	timeout.tv_sec = 5;
+	timeout.tv_usec = 0;
 	
-	if( (-1==ioctl(bpf,BIOCGBLEN,&blen))||(-1==ioctl(bpf,BIOCSETIF,&ifr))||
-		(-1==ioctl(bpf,BIOCSETF,&bpf_pro))||(-1==ioctl(bpf,BIOCFLUSH))||(-1==ioctl(bpf,BIOCSRTIMEOUT,&timeout)))
+	if (-1 == ioctl(bpf, BIOCGBLEN, &blen))
 	{
-		dprintf("ioctl error");
-		close(bpf);
+		dprintf("ioctl BIOCGBLEN error\n");
+		perror("error");
 		return NULL;
 	}
-	
+
+	if (-1 == ioctl(bpf, BIOCSETIF, &ifr))
+	{
+		dprintf("ioctl BIOCSETIF error\n");
+		perror("error");
+		return NULL;
+	}
+
+	if (-1 == ioctl(bpf, BIOCSETF, &bpf_pro))
+	{
+		dprintf("ioctl BIOCSETF error\n");
+		perror("error");
+		return NULL;
+	}
+
+	if (-1 == ioctl(bpf, BIOCFLUSH))
+	{
+		dprintf("ioctl BIOCFLUSH error\n");
+		perror("error");
+		return NULL;
+	}
+
+	if (-1 == ioctl(bpf, BIOCSRTIMEOUT, &timeout))
+	{
+		dprintf("ioctl BIOCSRTIMEOUT error\n");
+		perror("error");
+		return NULL;
+	}
+
 	ec = os_new(ETHCARD, 1);
 	
-	ec->fd = bpf
+	ec->fd = bpf;
 	ec->blen = blen;
 	
 	return ec;

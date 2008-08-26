@@ -40,7 +40,6 @@
 	
 #endif
 
-
 #ifdef _BSD
 
 	#include <stdio.h>
@@ -52,11 +51,18 @@
 	#include <sys/uio.h>
 	#include <unistd.h>
 	#include <sys/socket.h>
+	#include <ifaddrs.h>
 	#include <net/bpf.h>
 	#include <net/if.h>
 	#include <string.h>
 	#include <sys/select.h>
 	#include <signal.h>
+	#include <net/if.h>
+	#include <sys/queue.h>
+	#include <ctype.h>
+	#include <net/ethernet.h>
+	#include <net/if_dl.h>
+	#include <errno.h>
 
 	typedef struct _ETHCARD
 	{

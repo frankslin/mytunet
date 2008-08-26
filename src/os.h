@@ -37,7 +37,7 @@
 
 
 #include <time.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -108,11 +108,9 @@
 	typedef unsigned long DWORD;
 	typedef unsigned short WORD;
 	
-#ifndef QGLOBAL_H
 	typedef unsigned long UINT32;
 	typedef unsigned short UINT16;
 	typedef unsigned char UINT8;
-#endif
 
 	typedef struct sockaddr_in SOCKADDR_IN;
 	typedef struct hostent HOSTENT;
@@ -128,6 +126,10 @@
 #	endif
 
 
+#endif
+
+#ifdef _BSD
+	#include <netinet/in.h>
 #endif
 
 #	ifndef OK
@@ -231,6 +233,9 @@ typedef struct _LOCK
 #ifdef _LINUX
 	pthread_mutex_t lock;
 #endif
+#ifdef _BSD
+	pthread_mutex_t lock;
+#endif
 }LOCK;
 
 LOCK *os_lock_create();
@@ -286,6 +291,9 @@ typedef struct _THREAD
 #ifdef _LINUX
 	pthread_t thread;
 #endif
+#ifdef _BSD
+	pthread_t thread;
+#endif
 	BOOL init_complete;
 	UINT status;
 	POINTER param;
@@ -300,6 +308,9 @@ typedef struct _THREAD
 	typedef POINTER (* THREADPROC) (THREAD *self);
 #endif
 
+#ifdef _BSD
+	typedef POINTER (* THREADPROC) (THREAD *self);
+#endif
 
 extern THREAD global_main_thread;
 

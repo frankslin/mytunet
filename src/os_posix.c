@@ -159,7 +159,7 @@ void os_thread_kill(THREAD *thread)
 		{
 			if(thread->thread == pthread_self())
 			{
-				dprintf("[os_thread_kill] try to kill SELF %d\r\n", thread->thread);
+				dprintf("[os_thread_kill] try to kill SELF 0x%x\r\n", thread->thread);
 				thread->status = THREAD_KILLED;
 				//pthread_exit(0);
 				//dprintf("[os_thread_kill] ERROR! FAILED TO KILL SELF %d\r\n", thread->thread);
@@ -169,7 +169,7 @@ void os_thread_kill(THREAD *thread)
 				
 				//pthread_cancel(thread->thread);
 				thread->status = THREAD_KILLED;
-				dprintf("[os_thread_kill] finished killing %d\r\n", thread->thread);
+				dprintf("[os_thread_kill] finished killing 0x%x\r\n", thread->thread);
 			}		
 		}
 		thread->thread = 0;
@@ -476,8 +476,14 @@ VOID os_socket_tcp_status(SOCKET s, BOOL *readable, BOOL *writeable, BOOL *error
 VOID *os_malloc(INT size)
 {
 	VOID *p;
+//	printf("os_malloc: %d bytes\n", size);
 
 	p = malloc(size);
+	if (p == 0)
+	{
+		perror("malloc failed!");
+		exit(1);
+	}
     memset(p, 0, size);
     
 	if(!p) dprintf("[os_malloc] ERROR! failed to malloc %d\r\n", size);
