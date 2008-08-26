@@ -94,6 +94,9 @@ static void dot1x_logout()
     BUFFER *buf;
     BYTE tmpbuf[100];
 
+	if (!ethcard)
+		return;
+
     buf = buffer_new(200);
 
     buf = buffer_append(buf, hex2buf(DOT1XMAC, tmpbuf, NULL), 6);
@@ -440,6 +443,7 @@ VOID dot1x_start(USERCONFIG *uc)
     if((ethcard = ethcard_open(userconfig.szAdaptor)) == NULL)
     {
         logs_append(g_logs, "DOT1X_START_FAIL", "ETHCARD_OPEN", NULL, 0);
+		dot1x_state = DOT1X_STATE_ERROR;
         //dprintf("failed to open the ethcard!\n");
         return;
     }
