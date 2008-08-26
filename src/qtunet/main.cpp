@@ -314,6 +314,16 @@ class QTunetDlgMain : public DlgMain
                     txtLog->append("[802.1x] Starting...");
                 }
 
+                if(qlog.tag == "DOT1X_START_FAIL")
+                {
+                    txtLog->append("[802.1x] Start failed.\n" \
+								"See console output for details.");
+#ifdef _BSD
+					txtLog->append("Make sure that you have permission\n" \
+								"to open bpf device.");
+#endif
+                }
+
                 if(qlog.tag == "DOT1X_LOGON_REQUEST")
                 {
                     txtLog->append("[802.1x] Sending logon request ...");
