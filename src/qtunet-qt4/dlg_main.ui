@@ -1,0 +1,536 @@
+<ui version="4.0" >
+ <class>DlgMain</class>
+ <widget class="QDialog" name="DlgMain" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>402</width>
+    <height>370</height>
+   </rect>
+  </property>
+  <property name="font" >
+   <font>
+    <family>Bitstream Vera Sans</family>
+   </font>
+  </property>
+  <property name="windowTitle" >
+   <string>qtunet</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="icons.qrc" >
+    <normaloff>:/DlgMain/images/image0.png</normaloff>:/DlgMain/images/image0.png</iconset>
+  </property>
+  <widget class="QLabel" name="textLabel4" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>70</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Adapter:</string>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textLabel1" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>70</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Username:</string>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textLabel2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>70</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Password:</string>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="textLabel3" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>70</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Limitation:</string>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cmdLogout" >
+   <property name="geometry" >
+    <rect>
+     <x>310</x>
+     <y>10</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Lo&amp;gout</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbAdapter" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>10</y>
+     <width>120</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chkSavePassword" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>100</y>
+     <width>170</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Save Password</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbLimitation" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>100</y>
+     <width>120</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cmdQuit" >
+   <property name="geometry" >
+    <rect>
+     <x>310</x>
+     <y>70</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Quit</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chkUseDot1x" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>130</y>
+     <width>300</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Use &amp;802.1x (for Zijing Users)</string>
+   </property>
+   <property name="tristate" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatus" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>150</y>
+     <width>300</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Status</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cmdLogin" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>10</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Logi&amp;n</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imgStatus" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>140</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imgStatus_Domestic" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>120</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="icons.qrc" >:/DlgMain/images/image2.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imgStatus_None" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>120</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imgStatus_Busy" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="icons.qrc" >:/DlgMain/images/image3.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imgStatus_NoLimit" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>120</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="icons.qrc" >:/DlgMain/images/image4.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imgStatus_Campus" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>120</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="icons.qrc" >:/DlgMain/images/image5.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="imgStatus_Dot1x" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>170</x>
+     <y>120</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="icons.qrc" >:/DlgMain/images/image6.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtUsername" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>40</y>
+     <width>120</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="frame" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtPassword" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>70</y>
+     <width>120</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="frame" >
+    <bool>true</bool>
+   </property>
+   <property name="echoMode" >
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="cmdHelp" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>40</y>
+     <width>170</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Help!!!!!!!!</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="cmdAbout" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>70</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>About</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txtLog" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>381</width>
+     <height>171</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <resources>
+  <include location="icons.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>cmdLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>DlgMain</receiver>
+   <slot>cmdLogout_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdQuit</sender>
+   <signal>clicked()</signal>
+   <receiver>DlgMain</receiver>
+   <slot>cmdQuit_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtPassword</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>DlgMain</receiver>
+   <slot>txtPassword_textChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtPassword</sender>
+   <signal>returnPressed()</signal>
+   <receiver>DlgMain</receiver>
+   <slot>txtPassword_returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdHelp</sender>
+   <signal>clicked()</signal>
+   <receiver>DlgMain</receiver>
+   <slot>cmdHelp_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdAbout</sender>
+   <signal>clicked()</signal>
+   <receiver>DlgMain</receiver>
+   <slot>cmdAbout_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdLogin</sender>
+   <signal>clicked()</signal>
+   <receiver>DlgMain</receiver>
+   <slot>cmdLogin_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>259</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>200</x>
+     <y>184</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>cmdLogin_clicked()</slot>
+ </slots>
+</ui>

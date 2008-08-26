@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/DlgMain" >
+        <file>images/image0.png</file>
+        <file>images/image1.png</file>
+        <file>images/image2.png</file>
+        <file>images/image3.png</file>
+        <file>images/image4.png</file>
+        <file>images/image5.png</file>
+        <file>images/image6.png</file>
+    </qresource>
+</RCC>

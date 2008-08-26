@@ -1,0 +1,26 @@
+Log for qt3to4 on 周一 八月 25 20:37:20 2008. Number of log entries: 5
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/main.cpp at line 9 column 18: qlistbox.h -> q3listbox.h
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/main.cpp at line 12 column 19: qtextedit.h -> q3textedit.h
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/main.cpp at line 36 column 20: qpopupmenu.h -> q3popupmenu.h
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/main.cpp at line 46 column 14: QPopupMenu -> Q3PopupMenu
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/main.cpp: Added the following include directives:
+	#include <QContextMenuEvent> 	#include <QCloseEvent> 	#include <QTimerEvent> 	#include <QMouseEvent> 
+
+Log for qt3to4 on 周一 八月 25 20:46:40 2008. Number of log entries: 8
+No changes made to file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/main.cpp
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qsystemtray.cpp at line 55 column 77: WMouseNoMask -> Qt::WMouseNoMask
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qsystemtray.cpp at line 55 column 95: WRepaintNoErase -> Qt::WNoAutoErase
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qsystemtray.cpp at line 55 column 112: WType_TopLevel -> Qt::WType_TopLevel
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qsystemtray.cpp at line 55 column 131: WStyle_Customize -> Qt::WStyle_Customize
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qsystemtray.cpp at line 55 column 149: WStyle_NoBorder -> Qt::WStyle_NoBorder
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qsystemtray.cpp at line 55 column 169: WStyle_StaysOnTop -> Qt::WStyle_StaysOnTop
+No changes made to file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qtunet.cpp
+
+Log for qt3to4 on 周一 八月 25 20:46:43 2008. Number of log entries: 5
+No changes made to file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/dlg_about.ui.h
+No changes made to file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/dlg_main.ui.h
+No changes made to file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qsystemtray.h
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qtunet.h at line 42 column 22: QValueList -> Q3ValueList
+In file /usr/home/henryhu/soft/mytunet-read-only/src/qtunet-qt4/qtunet.h: Added the following include directives:
+	#include <Q3ValueList> 
+
