@@ -150,7 +150,7 @@ static THREADRET raw_socket_loop_thread(THREAD *self)
 	CHAR buf[2*32767];
 	
 	ETHCARD_LOOP_RECV_PROC_PARAM *pp, p;
-	size_t len = 0;
+	ssize_t len = 0;
 
 	fd_set set;
 	struct timeval tv;
@@ -166,18 +166,27 @@ static THREADRET raw_socket_loop_thread(THREAD *self)
 
 	while(os_thread_is_running(self) || os_thread_is_paused(self))
 	{
-		tv.tv_sec = 0;
+		tv.tv_sec = 1;
 		tv.tv_usec = 0;
 		FD_ZERO(&set);
 		FD_SET(p.ethcard->fd, &set);
-		select(p.ethcard->fd + 1, &set, NULL, NULL, &tv);
+		int count;
+		count = select(p.ethcard->fd + 1, &set, NULL, NULL, &tv);
+		//dprintf("selected %d fds\n", count);
 		if( FD_ISSET(p.ethcard->fd, &set) )
 		{
 			len = read(p.ethcard->fd, buf, sizeof(buf));
+			if (len == -1)
+			{
+				perror("read error:");
+			}
+//			dprintf("read finished. len = %d\n",len);
+			struct bpf_hdr *hdr = (struct bpf_hdr *)buf;
+			pkt_data = (BYTE *)buf + hdr->bh_hdrlen;
 			
 			if(len > 0)
 			{
-				p.proc(p.ethcard, pkt_data, len);
+				p.proc(p.ethcard, pkt_data , len);
 			}
 			else
 			{
@@ -186,6 +195,7 @@ static THREADRET raw_socket_loop_thread(THREAD *self)
 		}
 		else
 		{
+//			dprintf("select over without set\n");
 			os_sleep(20);
 		}
 		os_thread_test_paused(self);
@@ -263,41 +273,56 @@ ETHCARD *ethcard_open(char *name)
 	
 	strcpy(ifr.ifr_name, name);
 	struct timeval timeout;
-	timeout.tv_sec = 5;
+	timeout.tv_sec = 0;
 	timeout.tv_usec = 0;
+	int immediate;
+	immediate = 1;
+	int mblen = 2*32767;
+
 	
+	if (-1 == ioctl(bpf, BIOCIMMEDIATE, &immediate))
+	{
+		perror("error");
+		dprintf("ioctl BIOCIMMEDIATE error\n");
+		return NULL;
+	}
 	if (-1 == ioctl(bpf, BIOCGBLEN, &blen))
 	{
-		dprintf("ioctl BIOCGBLEN error\n");
 		perror("error");
+		dprintf("ioctl BIOCGBLEN error\n");
+		return NULL;
+	}
+	if (-1 == ioctl(bpf, BIOCSBLEN, &mblen))
+	{
+		perror("ioctl BIOCSBLEN error");
 		return NULL;
 	}
 
 	if (-1 == ioctl(bpf, BIOCSETIF, &ifr))
 	{
-		dprintf("ioctl BIOCSETIF error\n");
 		perror("error");
+		dprintf("ioctl BIOCSETIF error\n");
 		return NULL;
 	}
 
 	if (-1 == ioctl(bpf, BIOCSETF, &bpf_pro))
 	{
-		dprintf("ioctl BIOCSETF error\n");
 		perror("error");
+		dprintf("ioctl BIOCSETF error\n");
 		return NULL;
 	}
 
 	if (-1 == ioctl(bpf, BIOCFLUSH))
 	{
-		dprintf("ioctl BIOCFLUSH error\n");
 		perror("error");
+		dprintf("ioctl BIOCFLUSH error\n");
 		return NULL;
 	}
 
 	if (-1 == ioctl(bpf, BIOCSRTIMEOUT, &timeout))
 	{
-		dprintf("ioctl BIOCSRTIMEOUT error\n");
 		perror("error");
+		dprintf("ioctl BIOCSRTIMEOUT error\n");
 		return NULL;
 	}
 

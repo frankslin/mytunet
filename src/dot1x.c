@@ -243,13 +243,11 @@ static VOID dot1x_loop_recv_proc(ETHCARD *ethcard, BYTE *pkt_data, INT pkt_len)
     EAPOL_RANDSTREAM_PACKET * stmpkt = (EAPOL_RANDSTREAM_PACKET *)pkt_data;
     EAPOL_PACKET_HEADER *pkthdr = (EAPOL_PACKET_HEADER *)pkt_data;
 
-//  INT i,j;
+/*    INT i,j;
+	dprintf("dot1x_loop_recv_proc\n");
+	for (i=0; i<pkt_len; i++)
+		dprintf("%.2x ", pkt_data[i]);
 
-
-    if(pkt_data && pkt_len && memcmp(pkthdr->dest, hex2buf(userconfig.szMac, tmpbuf, NULL), 6) == 0 && pkthdr->tag == 0x8e88)
-    {
-
-        /*
         dprintf("Recv: \n DEST: ");
         for(i = 1, j = 0; j < 6; i++,j++)
         {
@@ -273,7 +271,22 @@ static VOID dot1x_loop_recv_proc(ETHCARD *ethcard, BYTE *pkt_data, INT pkt_len)
         }
 
         dprintf("\n");
-        */
+		*/
+
+
+
+#define FNAME "dot1x_loop_recv_proc"
+	if (!pkt_data)
+		dprintf(FNAME": !pkt_data error\n");
+	if (!pkt_len)
+		dprintf(FNAME": !pkt_len error\n");
+	if (!memcmp(pkthdr->dest, hex2buf(userconfig.szMac, tmpbuf, NULL), 6))
+		dprintf(FNAME": Not our packet\n");
+	if (pkthdr->tag != 0x8e88)
+		dprintf(FNAME": proto error : %x\n", pkthdr->tag);
+#undef FNAME
+    if(pkt_data && pkt_len && memcmp(pkthdr->dest, hex2buf(userconfig.szMac, tmpbuf, NULL), 6) == 0 && (pkthdr->tag == 0x8e88))
+    {
 
         logs_append(g_logs, "DOT1X_RECV", NULL, pkt_data, pkt_len);
 
