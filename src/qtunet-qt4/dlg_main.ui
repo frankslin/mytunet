@@ -5,9 +5,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>402</width>
-    <height>370</height>
+    <width>462</width>
+    <height>567</height>
    </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="font" >
    <font>
@@ -21,396 +27,337 @@
    <iconset resource="icons.qrc" >
     <normaloff>:/DlgMain/images/image0.png</normaloff>:/DlgMain/images/image0.png</iconset>
   </property>
-  <widget class="QLabel" name="textLabel4" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>70</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Adapter:</string>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="textLabel1" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>40</y>
-     <width>70</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Username:</string>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="textLabel2" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>70</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Password:</string>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="textLabel3" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>100</y>
-     <width>70</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Limitation:</string>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="cmdLogout" >
-   <property name="geometry" >
-    <rect>
-     <x>310</x>
-     <y>10</y>
-     <width>80</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Lo&amp;gout</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="cmbAdapter" >
-   <property name="geometry" >
-    <rect>
-     <x>90</x>
-     <y>10</y>
-     <width>120</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chkSavePassword" >
-   <property name="geometry" >
-    <rect>
-     <x>220</x>
-     <y>100</y>
-     <width>170</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Save Password</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="cmbLimitation" >
-   <property name="geometry" >
-    <rect>
-     <x>90</x>
-     <y>100</y>
-     <width>120</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="cmdQuit" >
-   <property name="geometry" >
-    <rect>
-     <x>310</x>
-     <y>70</y>
-     <width>80</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Quit</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chkUseDot1x" >
-   <property name="geometry" >
-    <rect>
-     <x>90</x>
-     <y>130</y>
-     <width>300</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Use &amp;802.1x (for Zijing Users)</string>
-   </property>
-   <property name="tristate" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblStatus" >
-   <property name="geometry" >
-    <rect>
-     <x>90</x>
-     <y>150</y>
-     <width>300</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Status</string>
-   </property>
-   <property name="alignment" >
-    <set>Qt::AlignCenter</set>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="cmdLogin" >
-   <property name="geometry" >
-    <rect>
-     <x>220</x>
-     <y>10</y>
-     <width>80</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Logi&amp;n</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="imgStatus" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>30</x>
-     <y>140</y>
-     <width>22</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
-   </property>
-   <property name="scaledContents" >
-    <bool>true</bool>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="imgStatus_Domestic" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>50</x>
-     <y>120</y>
-     <width>22</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="icons.qrc" >:/DlgMain/images/image2.png</pixmap>
-   </property>
-   <property name="scaledContents" >
-    <bool>true</bool>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="imgStatus_None" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>110</x>
-     <y>120</y>
-     <width>22</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
-   </property>
-   <property name="scaledContents" >
-    <bool>true</bool>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="imgStatus_Busy" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>20</x>
-     <y>120</y>
-     <width>22</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="icons.qrc" >:/DlgMain/images/image3.png</pixmap>
-   </property>
-   <property name="scaledContents" >
-    <bool>true</bool>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="imgStatus_NoLimit" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>80</x>
-     <y>120</y>
-     <width>22</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="icons.qrc" >:/DlgMain/images/image4.png</pixmap>
-   </property>
-   <property name="scaledContents" >
-    <bool>true</bool>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="imgStatus_Campus" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>140</x>
-     <y>120</y>
-     <width>22</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="icons.qrc" >:/DlgMain/images/image5.png</pixmap>
-   </property>
-   <property name="scaledContents" >
-    <bool>true</bool>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="imgStatus_Dot1x" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>170</x>
-     <y>120</y>
-     <width>22</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="icons.qrc" >:/DlgMain/images/image6.png</pixmap>
-   </property>
-   <property name="scaledContents" >
-    <bool>true</bool>
-   </property>
-   <property name="wordWrap" >
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="txtUsername" >
-   <property name="geometry" >
-    <rect>
-     <x>90</x>
-     <y>40</y>
-     <width>120</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="frame" >
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="txtPassword" >
-   <property name="geometry" >
-    <rect>
-     <x>90</x>
-     <y>70</y>
-     <width>120</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="frame" >
-    <bool>true</bool>
-   </property>
-   <property name="echoMode" >
-    <enum>QLineEdit::Password</enum>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="cmdHelp" >
-   <property name="geometry" >
-    <rect>
-     <x>220</x>
-     <y>40</y>
-     <width>170</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Help!!!!!!!!</string>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="cmdAbout" >
-   <property name="geometry" >
-    <rect>
-     <x>220</x>
-     <y>70</y>
-     <width>80</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>About</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txtLog" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>180</y>
-     <width>381</width>
-     <height>171</height>
-    </rect>
-   </property>
-  </widget>
+  <property name="autoFillBackground" >
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2" >
+   <item rowspan="2" row="0" column="0" colspan="7" >
+    <layout class="QVBoxLayout" name="vertLayout" >
+     <property name="sizeConstraint" >
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
+     <item>
+      <layout class="QGridLayout" name="MainGrid" >
+       <item row="2" column="2" >
+        <widget class="QToolButton" name="cmdAbout" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>About</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3" >
+        <widget class="QPushButton" name="cmdQuit" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>Quit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" >
+        <widget class="QLineEdit" name="txtPassword" >
+         <property name="frame" >
+          <bool>true</bool>
+         </property>
+         <property name="echoMode" >
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QLabel" name="textLabel2" >
+         <property name="text" >
+          <string>Password:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QLabel" name="textLabel1" >
+         <property name="text" >
+          <string>Username:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" >
+        <widget class="QLineEdit" name="txtUsername" >
+         <property name="frame" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" colspan="2" >
+        <widget class="QToolButton" name="cmdHelp" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>Help!!!!!!!!</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" >
+        <widget class="QLabel" name="textLabel4" >
+         <property name="text" >
+          <string>Adapter:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" >
+        <widget class="QComboBox" name="cmbAdapter" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" >
+        <widget class="QPushButton" name="cmdLogin" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>Logi&amp;n</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3" >
+        <widget class="QPushButton" name="cmdLogout" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>Lo&amp;gout</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QLabel" name="textLabel3" >
+         <property name="text" >
+          <string>Limitation:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" >
+        <widget class="QComboBox" name="cmbLimitation" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2" colspan="2" >
+        <widget class="QCheckBox" name="chkSavePassword" >
+         <property name="text" >
+          <string>Save Password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" >
+        <widget class="QCheckBox" name="chkUseDot1x" >
+         <property name="text" >
+          <string>Use &amp;802.1x (for Zijing Users)</string>
+         </property>
+         <property name="tristate" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="3" >
+        <widget class="QLabel" name="lblStatus" >
+         <property name="text" >
+          <string>Status</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QLabel" name="imgStatus" >
+         <property name="enabled" >
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="pixmap" >
+          <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
+         </property>
+         <property name="scaledContents" >
+          <bool>true</bool>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="txtLog" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+         <horstretch>1</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="sizeIncrement" >
+        <size>
+         <width>10</width>
+         <height>10</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QLabel" name="imgStatus_Busy" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image3.png</pixmap>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" >
+    <widget class="QLabel" name="imgStatus_Domestic" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image2.png</pixmap>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3" >
+    <widget class="QLabel" name="imgStatus_NoLimit" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image4.png</pixmap>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4" >
+    <widget class="QLabel" name="imgStatus_None" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5" >
+    <widget class="QLabel" name="imgStatus_Campus" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image5.png</pixmap>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="6" >
+    <widget class="QLabel" name="imgStatus_Dot1x" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image6.png</pixmap>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <zorder>imgStatus_Domestic</zorder>
+  <zorder>imgStatus_None</zorder>
+  <zorder>imgStatus_Busy</zorder>
+  <zorder>imgStatus_NoLimit</zorder>
+  <zorder>imgStatus_Campus</zorder>
+  <zorder>imgStatus_Dot1x</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+  <zorder>horizontalLayoutWidget</zorder>
+  <zorder>txtLog</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11" />
  <resources>
