@@ -38,6 +38,7 @@ class QTunetSystemTray : public QSystemTrayIcon
 {
     QWidget *mainWidget;
     QMenu popupMenu;
+	Q_OBJECT
 
 public:
 	QTunetSystemTray(QWidget *mainWidget)
@@ -45,13 +46,28 @@ public:
 		this->mainWidget = mainWidget;
         popupMenu.addAction("Quit MyTunet", mainWidget, SLOT(mnuPopupQuit_clicked()));
 		setContextMenu(&popupMenu);
+		connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+				this, SLOT(activated(QSystemTrayIcon::ActivationReason)));
 	}
     virtual void contextMenuEvent ( QContextMenuEvent * e )
     {
         popupMenu.popup(e->globalPos());
     }
 
-
+private slots:
+	void activated( QSystemTrayIcon::ActivationReason reason )
+	{
+		switch (reason)
+		{
+			case QSystemTrayIcon::DoubleClick:
+			case QSystemTrayIcon::Trigger:
+			case QSystemTrayIcon::MiddleClick:
+				mainWidget->setVisible(!mainWidget->isVisible());
+				break;
+			default:
+				break;
+		}
+	}
 };
 
 
@@ -446,6 +462,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
         void closeEvent ( QCloseEvent * e )
         {
             hide();
+			e->ignore();
         }
 
 };
