@@ -20,6 +20,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <iostream>
+using namespace std;
 
 
 #include "../ethcard.h"
@@ -88,6 +90,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
 
     private:
         bool isUserEditingPassword;
+		bool needHide;
         QTunetSystemTray tray;
 		DlgAbout about;
         QString accountMoney, usedMoney;
@@ -163,7 +166,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
             if(g_qtunet_thread.isRunning())
                 return;
 
-
+			needHide = true;
             g_qtunet.setUsername(txtUsername->text());
             g_qtunet.setEthcard(cmbAdapter->currentText());
 
@@ -274,6 +277,11 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                         setStateIcon(*(imgStatus_Domestic->pixmap()));
                         break;
                 }
+				if (needHide)
+				{
+					hide();
+					needHide = false;
+				}
             }
             else
             {
@@ -299,6 +307,11 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                         setStateIcon(*(imgStatus_Domestic->pixmap()));
                         break;
                 }
+				if (needHide)
+				{
+					hide();
+					needHide = false;
+				}
             }
         }
 
