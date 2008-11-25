@@ -8,6 +8,7 @@
 #include <QCloseEvent>
 #include <QTimerEvent>
 #include <QMouseEvent>
+#include <QTextCodec>
 #include <QObject>
 
 #include "ui_dlg_main.h"
@@ -101,12 +102,9 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
 			setupUi(this);
             startTimer(100);
 			QIcon icon = QIcon(*(imgStatus->pixmap()));
-//			QIcon icon = windowIcon();
 			tray.setIcon(icon);
             tray.show();
-#ifdef FREEBSD
-			tray.showMessage("info","FREEBSD");
-#endif
+			QTextCodec::setCodecForCStrings(QTextCodec::codecForName("gbk"));
 
             imgStatus_Busy->hide();
             imgStatus_Dot1x->hide();
@@ -138,10 +136,11 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
             chkUseDot1x->setChecked(g_qtunet.getUseDot1x());
 
             chkSavePassword->setChecked(g_qtunet.isSavePassword);
+			chkAutoLogin->setChecked(g_qtunet.autoLogin);
 
-            cmbLimitation->insertItem(0,"Campus");
-            cmbLimitation->insertItem(0,"Domestic");
             cmbLimitation->insertItem(0,"None(International)");
+            cmbLimitation->insertItem(0,"Domestic");
+            cmbLimitation->insertItem(0,"Campus");
             chkSavePassword->setChecked(g_qtunet.isSavePassword);
 
             switch(g_qtunet.getLimitation())
@@ -156,6 +155,8 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                     cmbLimitation->setCurrentIndex(2);
                     break;
             }
+			if (g_qtunet.autoLogin)
+				cmdLogin_clicked();
         }
 
 
@@ -200,6 +201,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
             isUserEditingPassword = true;
 
 
+			g_qtunet.autoLogin = chkAutoLogin->isChecked();
             g_qtunet.saveConfig(chkSavePassword->isChecked());
 
             g_qtunet.login();
@@ -212,6 +214,24 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
         {
             hide();
             g_qtunet.logout();
+            g_qtunet.setUsername(txtUsername->text());
+            g_qtunet.setEthcard(cmbAdapter->currentText());
+            switch(cmbLimitation->currentIndex())
+            {
+                case 0:
+                    g_qtunet.setLimitation(LIMITATION_CAMPUS);
+                    break;
+                case 1:
+                    g_qtunet.setLimitation(LIMITATION_DOMESTIC);
+                    break;
+                case 2:
+                    g_qtunet.setLimitation(LIMITATION_NONE);
+                    break;
+            }
+
+            g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
+			g_qtunet.autoLogin = chkAutoLogin->isChecked();
+            g_qtunet.saveConfig(chkSavePassword->isChecked());
             QApplication::exit(0);
         }
         void txtPassword_returnPressed()
@@ -328,8 +348,8 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
 
                 g_qtunetlogs.fetchLog(qlog);
 
-                if(qlog.tag != "MYTUNETSVC_LIMITATION" && qlog.tag != "MYTUNETSVC_STATE")
-                    printf("qtunet: %s %s %s\n", QS2CS(qlog.tag), QS2CS(qlog.data), QS2CS(qlog.str));
+//                if(qlog.tag != "MYTUNETSVC_LIMITATION" && qlog.tag != "MYTUNETSVC_STATE")
+//                    printf("qtunet: %s %s %s\n", QS2CS(qlog.tag), QS2CS(qlog.data), QS2CS(qlog.str));
 
                 if(qlog.tag == "MYTUNETSVC_LIMITATION")
                 {
@@ -438,7 +458,8 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                 }
                 if(qlog.tag == "TUNET_NETWORK_ERROR")
                 {
-                    txtLog->append("[tunet]  Network error : " + qlog.str);
+                    txtLog->append("[tunet]  Network error : ");
+					txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_ERROR")
                 {
@@ -447,7 +468,8 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                 }
                 if(qlog.tag == "TUNET_KEEPALIVE_ERROR")
                 {
-                    txtLog->append("[tunet]  Keepalive error : " + qlog.str);
+                    txtLog->append("[tunet]  Keepalive error : ");
+					txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_STOP")
                 {
@@ -466,6 +488,12 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                 {
                     txtLog->append("[tunet]  Logout!");
                 }
+				if(qlog.tag == "TUNET_LOGON_ERROR")
+				{
+					txtLog->append("[tunet]  Logon error! message :");
+					txtLog->append(qlog.str);
+//					puts(qlog.str.toLocal8Bit().data());
+				}
             }
 
             if(isMinimized())

@@ -90,6 +90,7 @@ class QTunet : public QObject
 
     public:
         bool       isSavePassword;
+		bool	autoLogin;
 
         QTunet();
 

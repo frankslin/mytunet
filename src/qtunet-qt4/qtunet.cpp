@@ -135,6 +135,7 @@ void QTunet::saveConfig(bool bSavePassword)
     }
 
     setting_write_int(NULL, "savepassword", isSavePassword);
+	setting_write_int(NULL, "autologin", autoLogin);
 }
 
 
@@ -142,6 +143,7 @@ void QTunet::loadConfig()
 {
     mytunetsvc_get_user_config(&userConfig);
     isSavePassword = setting_read_int(NULL, "savepassword", 0);
+	autoLogin = setting_read_int(NULL, "autologin", 0);
 }
 
 void QTunetThread::run()
@@ -153,7 +155,7 @@ void QTunetThread::run()
 
 void QTunet::login()
 {
-    puts("Login...");
+//    puts("Login...");
     mytunetsvc_clear_stop_flag();
     mytunetsvc_set_global_config_from(&userConfig);
     g_qtunet_thread.start();
@@ -161,15 +163,15 @@ void QTunet::login()
 
 void QTunet::logout()
 {
-    puts("Logout...");
+//    puts("Logout...");
     mytunetsvc_set_stop_flag();
-    if(!g_qtunet_thread.wait(3000))
+    if(!g_qtunet_thread.wait(2000))
     {
         tunet_reset();
         dot1x_reset();
         g_qtunet_thread.wait();
     }
-    puts("Logout, OK!");
+//    puts("Logout, OK!");
 }
 
 
@@ -177,7 +179,7 @@ extern "C"
 {
     VOID mytunetsvc_transmit_log_qt(LOG *log)
     {
-        //printf("qt: %s ", log->tag);
+//        printf("qt: %s \n", log->tag);
         g_qtunetlogs.addLog(log);
 
     }

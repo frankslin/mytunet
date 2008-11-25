@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>462</width>
+    <width>477</width>
     <height>567</height>
    </rect>
   </property>
@@ -232,6 +232,13 @@
          </property>
         </widget>
        </item>
+       <item row="4" column="2" colspan="2" >
+        <widget class="QCheckBox" name="chkAutoLogin" >
+         <property name="text" >
+          <string>Auto Login</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item>
@@ -252,22 +259,6 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="1" >
-    <widget class="QLabel" name="imgStatus_Busy" >
-     <property name="enabled" >
-      <bool>true</bool>
-     </property>
-     <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image3.png</pixmap>
-     </property>
-     <property name="scaledContents" >
-      <bool>true</bool>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="2" >
     <widget class="QLabel" name="imgStatus_Domestic" >
      <property name="enabled" >
@@ -284,13 +275,13 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="3" >
-    <widget class="QLabel" name="imgStatus_NoLimit" >
+   <item row="1" column="4" >
+    <widget class="QLabel" name="imgStatus_None" >
      <property name="enabled" >
       <bool>true</bool>
      </property>
      <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image4.png</pixmap>
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
      </property>
      <property name="scaledContents" >
       <bool>true</bool>
@@ -300,13 +291,29 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="4" >
-    <widget class="QLabel" name="imgStatus_None" >
+   <item row="1" column="1" >
+    <widget class="QLabel" name="imgStatus_Busy" >
      <property name="enabled" >
       <bool>true</bool>
      </property>
      <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image3.png</pixmap>
+     </property>
+     <property name="scaledContents" >
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3" >
+    <widget class="QLabel" name="imgStatus_NoLimit" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="icons.qrc" >:/DlgMain/images/image4.png</pixmap>
      </property>
      <property name="scaledContents" >
       <bool>true</bool>
@@ -355,9 +362,6 @@
   <zorder>imgStatus_NoLimit</zorder>
   <zorder>imgStatus_Campus</zorder>
   <zorder>imgStatus_Dot1x</zorder>
-  <zorder>verticalLayoutWidget</zorder>
-  <zorder>horizontalLayoutWidget</zorder>
-  <zorder>txtLog</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11" />
  <resources>
