@@ -8,18 +8,21 @@
 #include <unistd.h>
 
 
-#include "../core/os.h"
-#include "../core/des.h"
-#include "../core/md5.h"
-#include "../core/logs.h"
-#include "../core/tunet.h"
-#include "../core/dot1x.h"
-#include "../core/ethcard.h"
-#include "../core/userconfig.h"
-#include "../core/mytunet.h"
-#include "../core/util.h"
-#include "../core/setting.h"
-#include "../core/mytunetsvc.h"
+#include "../../os.h"
+#include "../../des.h"
+#include "../../md5.h"
+#include "../../logs.h"
+#include "../../tunet.h"
+#include "../../dot1x.h"
+#include "../../ethcard.h"
+#include "../../userconfig.h"
+#include "../../mytunet.h"
+#include "../../util.h"
+#include "../../setting.h"
+#include "../../mytunetsvc.h"
+
+VOID mytunetsvc_transmit_log_qt(VOID *xx)
+{}
 
 int main(int argc, char *argv[])
 {

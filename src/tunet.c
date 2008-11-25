@@ -170,6 +170,7 @@ static int tunet_logon_recv_welcome()
 
 						//TODO
 						//process such error!!!!!!!!!
+						logs_append(g_logs, "TUNET_LOGON_WELCOME", str->str, NULL, 0);
 						tunet_state = TUNET_STATE_ERROR;
 						return OK;
 					}
