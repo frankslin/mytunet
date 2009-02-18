@@ -247,7 +247,7 @@ ETHCARD *ethcard_open(char *name)
     {
         sprintf(device, "/dev/bpf%d", i);
 
-        bpf = open(device, O_RDWR);
+        bpf = open(device, O_RDWR | O_NONBLOCK);
         if (bpf == -1 && errno == EBUSY)
         {
             /*

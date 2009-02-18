@@ -280,8 +280,18 @@ static VOID dot1x_loop_recv_proc(ETHCARD *ethcard, BYTE *pkt_data, INT pkt_len)
 		dprintf(FNAME": !pkt_data error\n");
 	if (!pkt_len)
 		dprintf(FNAME": !pkt_len error\n");
-	if (!memcmp(pkthdr->dest, hex2buf(userconfig.szMac, tmpbuf, NULL), 6))
-		dprintf(FNAME": Not our packet\n");
+	if (memcmp(pkthdr->dest, hex2buf(userconfig.szMac, tmpbuf, NULL), 6) != 0)
+	{
+		hex2buf(DOT1XMAC, tmpbuf, NULL);
+		if (memcmp(pkthdr->dest, tmpbuf, 6) != 0)
+		{
+			char tempbuf[100];
+			dprintf(FNAME": Not our packet\n");
+			buf2hex(pkthdr->dest, 6, tempbuf);
+			dprintf(FNAME": packet dest: %s\n", tempbuf);
+			dprintf(FNAME": our addr:    %s\n", userconfig.szMac);
+		}
+	}
 	if (pkthdr->tag != 0x8e88)
 		dprintf(FNAME": proto error : %x\n", pkthdr->tag);
 #undef FNAME

@@ -255,6 +255,7 @@ void mytunetsvc_main()
             }
             else
             {
+                os_sleep(100);
                 continue;
             }
         }
