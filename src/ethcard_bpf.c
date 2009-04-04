@@ -19,6 +19,14 @@ static struct bpf_insn insns[] = {
 static THREAD *thread_ethcard_recv = NULL;
 
 
+#ifdef _MACOSX
+INT   get_ethcard_iface_byname(int sd, CHAR *name)
+{
+    struct ifreq req;
+    strncpy(req.ifr_name,name,IFNAMSIZ);
+    return if_nametoindex(req.ifr_name);
+}
+#else
 INT   get_ethcard_iface_byname(int sd, CHAR *name)
 {
 	int ret;
@@ -28,6 +36,8 @@ INT   get_ethcard_iface_byname(int sd, CHAR *name)
 	if (ret==-1) return -1;
 	return req.ifr_index;
 }
+#endif
+
 
 INT get_ethcards(ETHCARD_INFO *devices, INT bufsize)
 {

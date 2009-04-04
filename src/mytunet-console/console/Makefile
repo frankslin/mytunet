@@ -16,19 +16,26 @@ OBJS = main.o \
 	../../userconfig.o \
 	../../util.o
 
+# Install prefix
 PREFIX = /usr/local
 CC = gcc
 CPP = g++
 
-CFLAGS = -D_BSD -D_POSIX -DPOSIX
+CFLAGS = -D_POSIX -DPOSIX
 LDFLAGS = -pthread
+OSX_CFLAGS = -D_BSD -DMACOSX -arch ppc -arch i386
+LINUX_CFLAGS = -D_LINUX
+BSD_CFLAGS = -D_BSD
+
+# Modify according to your platform
+CFLAGS += ${BSD_CFLAGS}
+# CFLAGS += ${OSX_CFLAGS}
+# CFLAGS += ${LINUX_CFLAGS}
 
 all: mytunet
 
 mytunet: ${OBJS}
 	${CC} ${CFLAGS} ${LDFLAGS} ${OBJS} -o mytunet
-
-MAKEOBJDIR = ../../
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o $@

@@ -59,6 +59,9 @@ freebsd-* :message("FreeBSD platform"){
   DEFINES += _BSD
 }
 linux-* :message("Linux platform") {
-  DEFINES += _LINUX LINUX
+  DEFINES += _LINUX
+}
+macx-* :message("Mac OS X platform") {
+  DEFINES += _BSD _MACOSX
 }
 
