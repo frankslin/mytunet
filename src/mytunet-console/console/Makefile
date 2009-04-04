@@ -18,6 +18,7 @@ OBJS = main.o \
 
 # Install prefix
 PREFIX = /usr/local
+VERSION = 0.1
 CC = gcc
 CPP = g++
 
@@ -43,7 +44,7 @@ mytunet: ${OBJS}
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-.PHONY: clean install uninstall
+.PHONY: clean install uninstall pack
 clean:
 	rm -f mytunet ${OBJS}
 
@@ -53,3 +54,6 @@ install:
 uninstall:
 	rm -f ${PREFIX}/bin/mytunet
 
+pack:
+	strip mytunet
+	tar zcvf mytunet-`uname`-${VERSION}.`svnversion -n | sed -e 's/[[:digit:]]*://g; s/M//g'`.tar.gz mytunet

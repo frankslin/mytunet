@@ -64,4 +64,9 @@ linux-* :message("Linux platform") {
 macx-* :message("Mac OS X platform") {
   DEFINES += _BSD _MACOSX
 }
+VERSION = 0.1
+pack.target = pack
+pack.commands = strip qtunet; tar zcvf qtunet-qt4-`uname`-$$VERSION\.`svnversion -n | sed -e 's/[[:digit:]]*://g' | sed -e 's/M//g'`.tar.gz qtunet
+pack.depends = qtunet
+QMAKE_EXTRA_TARGETS += pack
 
