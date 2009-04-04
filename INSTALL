@@ -1,10 +1,11 @@
 1. Build
 
 To build qtunet-qt4, go to src/qtunet-qt4, run Qt4's qmake (usually qmake-qt4 or qmake), and run GNU's make (make or gmake).
+To build the console version, go to src/mytunet-console/console, modify Makefile to define _LINUX LINUX or define _BSD BSD, and run make.
 
 2. Install
 
-To install qtunet-qt4 after build, run
+To install qtunet-qt4 or mytunet console version after build, run
 
 make install
 
@@ -14,7 +15,7 @@ gmake install
 
 under FreeBSD.
 
-It would be installed into /usr/local/bin/qtunet
+It would be installed into /usr/local/bin/qtunet or /usr/local/bin/mytunet
 
 3. Uninstall
 
