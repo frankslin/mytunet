@@ -4,7 +4,6 @@
 # Target is ????? 
 
 LANGUAGE = C++ 
-# QT += qt3support
 MOC_DIR = tmp/moc 
 UI_DIR = tmp/ui 
 OBJECTS_DIR = tmp/obj 
@@ -48,6 +47,9 @@ SOURCES += main.cpp \
            ../userconfig.c \
            ../util.c \
            qtunet.cpp
+qtunet.path = /usr/local/bin
+qtunet.files = qtunet
+INSTALLS += qtunet
 RESOURCES += icons.qrc
 unix{
   DEFINES += _POSIX

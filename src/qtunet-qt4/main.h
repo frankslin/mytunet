@@ -118,7 +118,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
             cmbAdapter->insertItems(0,g_qtunet.getEthcards());
             for(int i=0;i<cmbAdapter->count(); i++)
             {
-                if(cmbAdapter->itemText(0) == g_qtunet.getEthcard())
+                if(cmbAdapter->itemText(i) == g_qtunet.getEthcard())
                 {
                     cmbAdapter->setCurrentIndex(i);
                     break;
@@ -494,6 +494,10 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
 					txtLog->append(qlog.str);
 //					puts(qlog.str.toLocal8Bit().data());
 				}
+                if(qlog.tag == "TUNET_THREAD_EXITING")
+                {
+//                    puts("Tunet Thread Exiting");
+                }
             }
 
             if(isMinimized())
