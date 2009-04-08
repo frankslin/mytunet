@@ -47,9 +47,19 @@ SOURCES += main.cpp \
            ../userconfig.c \
            ../util.c \
            qtunet.cpp
-qtunet.path = /usr/local/bin
+TRANSLATIONS =  \
+                qtunet_zh_CN.ts
+COMPILED_TRANSLATIONS = qtunet_zh_CN.qm
+INSTALL_PREFIX = /usr/local
+DATADIR = $$INSTALL_PREFIX/share/qtunet
+TRANSLATION_DIR = $$DATADIR/lang
+DEFINES += TRANSLATION_DIR=\\\"$$TRANSLATION_DIR\\\"
+DISTFILES += qtunet qtunet_zh_CN.qm
+qtunet.path = $$INSTALL_PREFIX/bin
 qtunet.files = qtunet
-INSTALLS += qtunet
+translation.files = qtunet_zh_CN.qm
+translation.path = $$TRANSLATION_DIR
+INSTALLS += qtunet translation
 RESOURCES += icons.qrc
 unix{
   DEFINES += _POSIX

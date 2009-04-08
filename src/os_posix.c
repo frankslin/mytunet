@@ -159,7 +159,7 @@ void os_thread_kill(THREAD *thread)
 		{
 			if(thread->thread == pthread_self())
 			{
-				dprintf("[os_thread_kill] try to kill SELF 0x%x\r\n", thread->thread);
+//				dprintf("[os_thread_kill] try to kill SELF 0x%x\r\n", thread->thread);
 				thread->status = THREAD_KILLED;
 				//pthread_exit(0);
 				//dprintf("[os_thread_kill] ERROR! FAILED TO KILL SELF %d\r\n", thread->thread);
@@ -169,7 +169,7 @@ void os_thread_kill(THREAD *thread)
 				
 				//pthread_cancel(thread->thread);
 				thread->status = THREAD_KILLED;
-				dprintf("[os_thread_kill] finished killing 0x%x\r\n", thread->thread);
+//				dprintf("[os_thread_kill] finished killing 0x%x\r\n", thread->thread);
 			}		
 		}
 		thread->thread = 0;

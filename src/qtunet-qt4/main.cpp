@@ -1,14 +1,15 @@
 
-#include <qapplication.h>
-#include <qcombobox.h>
-#include <qcheckbox.h>
-#include <qlineedit.h>
+#include <QApplication>
+#include <QComboBox>
+#include <QCheckBox>
+#include <QLineEdit>
 //Added by qt3to4:
 #include <QContextMenuEvent>
 #include <QCloseEvent>
 #include <QTimerEvent>
 #include <QMouseEvent>
 #include <QObject>
+#include <QTranslator>
 
 #include "ui_dlg_main.h"
 #include "ui_dlg_about.h"
@@ -42,6 +43,13 @@ QTunetThread g_qtunet_thread;
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
+
+    QString locale = QLocale::system().name();
+
+    QTranslator translator;
+    translator.load(QString("qtunet_") + locale, TRANSLATION_DIR);
+    app.installTranslator(&translator);
+
     QTunetDlgMain dlg;
 
     mytunet_init();
@@ -50,7 +58,7 @@ int main(int argc, char **argv)
 
 
     int r = app.exec();
-    puts("Exiting...");
+//    puts("Exiting...");
     mytunet_cleanup();
     return r;
 }

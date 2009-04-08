@@ -107,6 +107,9 @@ class QTunet : public QObject
         int getLimitation();
         void setLimitation(int v);
 
+        int getLanguage();
+        void setLanguage(int l);
+
         QStringList getEthcards();
         QString getEthcard();
         ETHCARD_INFO getEthcardInfo(QString name);

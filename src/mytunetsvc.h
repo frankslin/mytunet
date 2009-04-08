@@ -9,7 +9,6 @@
 #include "os.h"
 #include "userconfig.h"
 
-
 void mytunetsvc_init();
 void mytunetsvc_cleanup();
 void mytunetsvc_set_stop_flag();
@@ -18,11 +17,11 @@ int mytunetsvc_login();
 int mytunetsvc_logout();
 void mytunetsvc_main();
 
-
 INT WINAPI mytunetsvc_set_user_config(CHAR *username, CHAR *password, BOOL isMD5Pwd, CHAR *adapter, INT limitation, INT language);
 INT WINAPI mytunetsvc_set_global_config_from(USERCONFIG *uc);
 INT WINAPI mytunetsvc_set_user_config_dot1x(BOOL usedot1x, BOOL retrydot1x);
 INT WINAPI mytunetsvc_get_user_config(USERCONFIG *uc);
+INT WINAPI mytunetsvc_set_default_language(INT language);
 VOID mytunetsvc_set_config_file(CHAR *s);
 enum
 {

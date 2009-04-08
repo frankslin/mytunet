@@ -1,8 +1,8 @@
 
-#include <qapplication.h>
-#include <qcombobox.h>
-#include <qcheckbox.h>
-#include <qlineedit.h>
+#include <QApplication>
+#include <QComboBox>
+#include <QCheckBox>
+#include <QLineEdit>
 //Added by qt3to4:
 #include <QContextMenuEvent>
 #include <QCloseEvent>
@@ -138,9 +138,11 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
             chkSavePassword->setChecked(g_qtunet.isSavePassword);
 			chkAutoLogin->setChecked(g_qtunet.autoLogin);
 
-            cmbLimitation->insertItem(0,"None(International)");
-            cmbLimitation->insertItem(0,"Domestic");
-            cmbLimitation->insertItem(0,"Campus");
+            cmbLimitation->insertItem(0,tr("None(International)"));
+            cmbLimitation->insertItem(0,tr("Domestic"));
+            cmbLimitation->insertItem(0,tr("Campus"));
+            cmbLanguage->insertItem(0, tr("Chinese"));
+            cmbLanguage->insertItem(0, tr("English"));
             chkSavePassword->setChecked(g_qtunet.isSavePassword);
 
             switch(g_qtunet.getLimitation())
@@ -148,11 +150,22 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                 case LIMITATION_CAMPUS:
                     cmbLimitation->setCurrentIndex(0);
                     break;
-                case LIMITATION_DOMESTIC:
-                    cmbLimitation->setCurrentIndex(1);
-                    break;
                 case LIMITATION_NONE:
                     cmbLimitation->setCurrentIndex(2);
+                    break;
+                case LIMITATION_DOMESTIC:
+                default:
+                    cmbLimitation->setCurrentIndex(1);
+                    break;
+            }
+            switch(g_qtunet.getLanguage())
+            {
+                case LANGUAGE_ENGLISH:
+                    cmbLanguage->setCurrentIndex(0);    
+                    break;
+                case LANGUAGE_CHINESE:
+                default:
+                    cmbLanguage->setCurrentIndex(1);
                     break;
             }
 			if (g_qtunet.autoLogin)
@@ -171,30 +184,38 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
             g_qtunet.setUsername(txtUsername->text());
             g_qtunet.setEthcard(cmbAdapter->currentText());
 
-            txtLog->append("[CONFIG] Username: " + txtUsername->text());
-            txtLog->append("[CONFIG] Ethcard : " + cmbAdapter->currentText());
+            txtLog->append(tr("[CONFIG] Username: ") + txtUsername->text());
+            txtLog->append(tr("[CONFIG] Ethcard : ") + cmbAdapter->currentText());
 
             ETHCARD_INFO ei = g_qtunet.getEthcardInfo(cmbAdapter->currentText());
-            txtLog->append(QString("[CONFIG] Ethcard MAC: ") + QString(ei.mac));
-            txtLog->append(QString("[CONFIG] Ethcard IP : ") + QString(ei.ip));
+            txtLog->append(QString(tr("[CONFIG] Ethcard MAC: ")) + QString(ei.mac));
+            txtLog->append(QString(tr("[CONFIG] Ethcard IP : ")) + QString(ei.ip));
             switch(cmbLimitation->currentIndex())
             {
                 case 0:
                     g_qtunet.setLimitation(LIMITATION_CAMPUS);
-                    txtLog->append("[CONFIG] Limitation: Campus");
+                    txtLog->append(tr("[CONFIG] Limitation: Campus"));
                     break;
                 case 1:
                     g_qtunet.setLimitation(LIMITATION_DOMESTIC);
-                    txtLog->append("[CONFIG] Limitation: Domestic");
+                    txtLog->append(tr("[CONFIG] Limitation: Domestic"));
                     break;
                 case 2:
                     g_qtunet.setLimitation(LIMITATION_NONE);
-                    txtLog->append("[CONFIG] Limitation: None(International)");
+                    txtLog->append(tr("[CONFIG] Limitation: None(International)"));
                     break;
             }
-
+            switch(cmbLanguage->currentIndex())
+            {
+                case 0:
+                    g_qtunet.setLanguage(LANGUAGE_ENGLISH);
+                    break;
+                case 1:
+                    g_qtunet.setLanguage(LANGUAGE_CHINESE);
+                    break;
+            }
             g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
-            txtLog->append(QString("[CONFIG] Use 802.1x : ") + (chkUseDot1x->isChecked() ? "Yes" : "No"));
+            txtLog->append(QString(tr("[CONFIG] Use 802.1x : ")) + (chkUseDot1x->isChecked() ? tr("Yes") : tr("No")));
 
             isUserEditingPassword = false;
             txtPassword->setText(g_qtunet.getMD5Password());
@@ -372,125 +393,125 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
 
                 if(qlog.tag == "DOT1X_START")
                 {
-                    txtLog->append("[802.1x] Starting...");
+                    txtLog->append(tr("[802.1x] Starting..."));
                 }
 
                 if(qlog.tag == "DOT1X_START_FAIL")
                 {
-                    txtLog->append("[802.1x] Start failed.\n" \
-								"See console output for details.");
+                    txtLog->append(tr("[802.1x] Start failed.\n" \
+								"See console output for details."));
 #ifdef _BSD
-					txtLog->append("Make sure that you have permission\n" \
-								"to open bpf device.");
+					txtLog->append(tr("Make sure that you have permission\n" \
+								"to open bpf device."));
 #endif
                 }
 
                 if(qlog.tag == "DOT1X_LOGON_REQUEST")
                 {
-                    txtLog->append("[802.1x] Sending logon request ...");
+                    txtLog->append(tr("[802.1x] Sending logon request ..."));
                 }
                 if(qlog.tag == "DOT1X_LOGON_SEND_USERNAME")
                 {
-                    txtLog->append("[802.1x] Sending username...");
+                    txtLog->append(tr("[802.1x] Sending username..."));
                 }
                 if(qlog.tag == "DOT1X_LOGON_AUTH")
                 {
-                    txtLog->append("[802.1x] Sending authentication data...");
+                    txtLog->append(tr("[802.1x] Sending authentication data..."));
                 }
                 if(qlog.tag == "DOT1X_RESET")
                 {
-                    txtLog->append("[802.1x] Reset!");
+                    txtLog->append(tr("[802.1x] Reset!"));
                 }
                 if(qlog.tag == "DOT1X_STOP")
                 {
-                    txtLog->append("[802.1x] Stopping ...");
+                    txtLog->append(tr("[802.1x] Stopping ..."));
                 }
                 if(qlog.tag == "DOT1X_LOGOUT")
                 {
-                    txtLog->append("[802.1x] Logout!");
+                    txtLog->append(tr("[802.1x] Logout!"));
                 }
 
                 if(qlog.tag == "TUNET_START")
                 {
-                    txtLog->append("[tunet]  Starting ...");
+                    txtLog->append(tr("[tunet]  Starting ..."));
                 }
                 if(qlog.tag == "TUNET_LOGON_SEND_TUNET_USER")
                 {
-                    txtLog->append("[tunet]  Sending username ...");
+                    txtLog->append(tr("[tunet]  Sending username ..."));
                 }
                 if(qlog.tag == "TUNET_LOGON_WELCOME")
                 {
-                    txtLog->append("[tunet]  Welcome message : ");
+                    txtLog->append(tr("[tunet]  Welcome message : "));
                     txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_LOGON_MONEY")
                 {
-                    txtLog->append("[tunet]  Tunet account : " + qlog.str + " yuan");
-                    lblStatus->setText("Account : " + qlog.str + ", Used money : 0.00");
+                    txtLog->append(tr("[tunet]  Tunet account : ") + qlog.str + tr(" yuan"));
+                    lblStatus->setText(tr("Account : ") + qlog.str + tr(", Used money : 0.00"));
                 }
                 if(qlog.tag == "TUNET_LOGON_IPs")
                 {
-                    txtLog->append("[tunet]  Logon IPs : " + qlog.str);
+                    txtLog->append(tr("[tunet]  Logon IPs : ") + qlog.str);
                 }
 
                 if(qlog.tag == "TUNET_LOGON_SERVERTIME")
                 {
-                    txtLog->append("[tunet]  Server time : " + qlog.str);
+                    txtLog->append(tr("[tunet]  Server time : ") + qlog.str);
                 }
                 if(qlog.tag == "TUNET_LOGON_LASTTIME")
                 {
-                    txtLog->append("[tunet]  Last logon time : " + qlog.str);
+                    txtLog->append(tr("[tunet]  Last logon time : ") + qlog.str);
                 }
                 if(qlog.tag == "TUNET_LOGON_MSG")
                 {
-                    txtLog->append("[tunet]  Logon Message : ");
+                    txtLog->append(tr("[tunet]  Logon Message : "));
                     txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_KEEPALIVE_MONEY")
                 {
                     accountMoney = qlog.str;
-                    lblStatus->setText("Account : " + accountMoney + ", Used money : " + usedMoney);
+                    lblStatus->setText(tr("Account : ") + accountMoney + tr(", Used money : ") + usedMoney);
                 }
                 if(qlog.tag == "TUNET_KEEPALIVE_USED_MONEY")
                 {
                     usedMoney = qlog.str;
-                    lblStatus->setText("Account : " + accountMoney + ", Used money : " + usedMoney);
+                    lblStatus->setText(tr("Account : ") + accountMoney + tr(", Used money : ") + usedMoney);
                 }
                 if(qlog.tag == "TUNET_NETWORK_ERROR")
                 {
-                    txtLog->append("[tunet]  Network error : ");
+                    txtLog->append(tr("[tunet]  Network error : "));
 					txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_ERROR")
                 {
-                    txtLog->append("[tunet]  TUNET ERROR!");
+                    txtLog->append(tr("[tunet]  TUNET ERROR!"));
                     txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_KEEPALIVE_ERROR")
                 {
-                    txtLog->append("[tunet]  Keepalive error : ");
+                    txtLog->append(tr("[tunet]  Keepalive error : "));
 					txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_STOP")
                 {
-                    txtLog->append("[tunet]  Stopping ...");
+                    txtLog->append(tr("[tunet]  Stopping ..."));
                 }
                 if(qlog.tag == "TUNET_LOGON_SEND_LOGOUT")
                 {
-                    txtLog->append("[tunet]  Sending logout ...");
+                    txtLog->append(tr("[tunet]  Sending logout ..."));
                 }
                 if(qlog.tag == "TUNET_LOGOUT_MSG")
                 {
-                    txtLog->append("[tunet]  Logout message : ");
+                    txtLog->append(tr("[tunet]  Logout message : "));
                     txtLog->append(qlog.str);
                 }
                 if(qlog.tag == "TUNET_LOGOUT")
                 {
-                    txtLog->append("[tunet]  Logout!");
+                    txtLog->append(tr("[tunet]  Logout!"));
                 }
 				if(qlog.tag == "TUNET_LOGON_ERROR")
 				{
-					txtLog->append("[tunet]  Logon error! message :");
+					txtLog->append(tr("[tunet]  Logon error! message :"));
 					txtLog->append(qlog.str);
 //					puts(qlog.str.toLocal8Bit().data());
 				}

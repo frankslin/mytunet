@@ -9,7 +9,6 @@
 #include "logs.h"
 #include "setting.h"
 
-
 void mytunet_init()
 {
 	os_init();

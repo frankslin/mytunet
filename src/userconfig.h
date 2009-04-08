@@ -12,6 +12,9 @@
 #define LIMITATION_NONE			0x7fffffff
 #define LIMITATION_DOMESTIC		0x00000000
 
+#define LANGUAGE_ENGLISH        0
+#define LANGUAGE_CHINESE        1
+
 
 typedef struct _USERCONFIG
 {

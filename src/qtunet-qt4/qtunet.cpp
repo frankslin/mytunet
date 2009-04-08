@@ -1,4 +1,5 @@
-#include <qthread.h>
+#include <QThread>
+#include <QLocale>
 
 #include  "qtunet.h"
 #include "../ethcard.h"
@@ -14,6 +15,13 @@ QTunet::QTunet()
 {
     mytunetsvc_set_config_file(NULL);
     mytunetsvc_set_transmit_log_func(MYTUNETSVC_TRANSMIT_LOG_QT);
+
+    QString locale = QLocale::system().name();
+    if (locale.contains("zh"))
+        mytunetsvc_set_default_language(LANGUAGE_CHINESE);
+    else
+        mytunetsvc_set_default_language(LANGUAGE_ENGLISH);
+
     loadConfig();
 }
 
@@ -77,6 +85,15 @@ void QTunet::setLimitation(int v)
     userconfig_set_limitation(&userConfig, v);
 }
 
+int QTunet::getLanguage()
+{
+    return userConfig.language;
+}
+void QTunet::setLanguage(int l)
+{
+    userconfig_set_language(&userConfig, l);
+}
+
 QStringList QTunet::getEthcards()
 {
     ETHCARD_INFO ethcards[20];
@@ -127,11 +144,11 @@ void QTunet::saveConfig(bool bSavePassword)
 
     if(bSavePassword)
     {
-        mytunetsvc_set_user_config(userConfig.szUsername, userConfig.szMD5Password, true, userConfig.szAdaptor, userConfig.limitation, 0);
+        mytunetsvc_set_user_config(userConfig.szUsername, userConfig.szMD5Password, true, userConfig.szAdaptor, userConfig.limitation, userConfig.language);
     }
     else
     {
-        mytunetsvc_set_user_config(userConfig.szUsername, "", true, userConfig.szAdaptor, userConfig.limitation, 0);
+        mytunetsvc_set_user_config(userConfig.szUsername, "", true, userConfig.szAdaptor, userConfig.limitation, userConfig.language);
     }
 
     setting_write_int(NULL, "savepassword", isSavePassword);

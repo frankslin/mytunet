@@ -32,6 +32,7 @@ enum
 
 INT                 g_Goal = GOAL_NONE;
 INT                 g_DelayRetry = DELAY_RETRY_NONE;
+static INT          mytunet_default_language = LANGUAGE_ENGLISH;
 
 int mytunetsvc_login()
 {
@@ -614,8 +615,12 @@ INT WINAPI mytunetsvc_set_user_config_dot1x(BOOL usedot1x, BOOL retrydot1x)
     return OK;
 }
 
+INT WINAPI mytunetsvc_set_default_language(INT language)
+{
+    mytunet_default_language = language;
 
-
+    return OK;
+}
 
 INT WINAPI mytunetsvc_set_global_config_from(USERCONFIG *uc)
 {
@@ -652,9 +657,7 @@ INT WINAPI mytunetsvc_get_user_config(USERCONFIG *uc)
     userconfig_set_adapter(uc, str->str);
     str = string_free(str);
 
-
-
-    userconfig_set_language(uc, setting_read_int(szConfigFile, "language", 0));
+    userconfig_set_language(uc, setting_read_int(szConfigFile, "language", mytunet_default_language));
     userconfig_set_limitation(uc, setting_read_int(szConfigFile, "limitation", 0));
 
     userconfig_set_dot1x(uc, setting_read_int(szConfigFile, "usedot1x", 1), 0);
