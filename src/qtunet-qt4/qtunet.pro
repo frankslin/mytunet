@@ -76,7 +76,7 @@ macx-* :message("Mac OS X platform") {
 }
 VERSION = 0.1
 pack.target = pack
-pack.commands = strip qtunet; tar zcvf qtunet-qt4-`uname`-$$VERSION\.`svnversion -n | sed -e 's/[[:digit:]]*://g' | sed -e 's/M//g'`.tar.gz qtunet
+pack.commands = strip qtunet; tar zcvf qtunet-qt4-`uname`-$$VERSION\.`svnversion -n | sed -e 's/[[:digit:]]*://g' | sed -e 's/M//g'`.tar.gz $$DISTFILES
 pack.depends = qtunet
 QMAKE_EXTRA_TARGETS += pack
 
