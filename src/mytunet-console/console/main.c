@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <signal.h>
 
 
 #include "../../os.h"
@@ -20,6 +21,19 @@
 #include "../../util.h"
 #include "../../setting.h"
 #include "../../mytunetsvc.h"
+
+static void sigint_handler(int signum) {
+    static int exiting = 0;
+    if (exiting)
+    {
+        printf("Already exiting, terminating.\n");
+        exit(1);
+    } else {
+        printf("Logging out...\n");
+        exiting = 1;
+        mytunetsvc_set_stop_flag();
+    }
+}
 
 VOID mytunetsvc_transmit_log_qt(VOID *xx)
 {}
@@ -43,7 +57,6 @@ int main(int argc, char *argv[])
     mytunetsvc_get_user_config(&tmpTestConfig);
 
     mytunetsvc_init();
-
 
     bRunByUser = (argc != 1);
     if(strlen(tmpTestConfig.szUsername) == 0) bRunByUser = 1;
@@ -189,7 +202,10 @@ int main(int argc, char *argv[])
     }
     else
     {
-        printf("loginning in!\n");
+        struct sigaction act;
+        memset(&act, 0, sizeof(act));
+        act.sa_handler = sigint_handler;
+        sigaction(SIGINT, &act, NULL);
         mytunetsvc_get_user_config(&g_UserConfig);
         mytunetsvc_main(0, NULL);
     }

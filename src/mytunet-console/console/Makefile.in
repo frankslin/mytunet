@@ -24,7 +24,7 @@ CPP = g++
 
 CFLAGS = -D_POSIX -DPOSIX
 LDFLAGS = -pthread
-OSX_CFLAGS = -D_BSD -DMACOSX -arch ppc -arch i386
+OSX_CFLAGS = -D_BSD -D_MACOSX -arch ppc -arch i386
 LINUX_CFLAGS = -D_LINUX
 BSD_CFLAGS = -D_BSD
 
