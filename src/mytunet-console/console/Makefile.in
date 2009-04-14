@@ -29,9 +29,9 @@ LINUX_CFLAGS = -D_LINUX
 BSD_CFLAGS = -D_BSD
 
 # Modify according to your platform
-CFLAGS += ${BSD_CFLAGS}
-# CFLAGS += ${OSX_CFLAGS}
-# CFLAGS += ${LINUX_CFLAGS}
+__OS_BSD__CFLAGS += ${BSD_CFLAGS}
+__OS_OSX__CFLAGS += ${OSX_CFLAGS}
+__OS_LINUX__CFLAGS += ${LINUX_CFLAGS}
 
 all: mytunet
 

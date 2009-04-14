@@ -2,50 +2,47 @@
 
 1. Build
 
-To build qtunet-qt4, go to src/qtunet-qt4, run Qt4's qmake (usually qmake-qt4 or qmake), and run GNU's make (make or gmake).
+    To build qtunet-qt4, go to src/qtunet-qt4, run Qt4's qmake (usually qmake-qt4 or qmake), and run
+        
+        make
 
 2. Install
 
-To install qtunet-qt4 after build, run
+    To install qtunet-qt4 after build, run
 
-make install
+        make install
 
-under Linux or
-
-gmake install
-
-under FreeBSD.
-
-It would be installed into /usr/local/bin/qtunet
+    as root. It would be installed into /usr/local/bin/qtunet
 
 3. Uninstall
 
-To uninstall qtunet-qt4, run
+    To uninstall qtunet-qt4, run
 
-make uninstall
+        make uninstall
 
-under Linux or
-
-gmake uninstall
-
-under FreeBSD.
+    as root.
 
 * About mytunet console version
 
 1. Build
 
-To build the console version, go to src/mytunet-console/console, modify Makefile according to your platform, and run make.
+    To build the console version, go to src/mytunet-console/console, run
+
+        ./genmakefile.sh
+        make
 
 2. Install
 
-To install mytunet console version after build, run
+    To install mytunet console version after build, run
 
-make install
+        make install
 
-It would be installed into /usr/local/bin/mytunet
+    as root. It would be installed into /usr/local/bin/mytunet
 
 3. Uninstall
 
-To uninstall mytunet, run
+    To uninstall mytunet, run
 
-make uninstall
+        make uninstall
+
+    as root.

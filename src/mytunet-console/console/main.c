@@ -189,6 +189,7 @@ int main(int argc, char *argv[])
     }
     else
     {
+        printf("loginning in!\n");
         mytunetsvc_get_user_config(&g_UserConfig);
         mytunetsvc_main(0, NULL);
     }
