@@ -47,7 +47,7 @@ public:
 	QTunetSystemTray(QWidget *mainWidget)
 	{
 		this->mainWidget = mainWidget;
-        popupMenu.addAction("Quit MyTunet", mainWidget, SLOT(mnuPopupQuit_clicked()));
+        popupMenu.addAction(tr("&Quit MyTunet"), mainWidget, SLOT(mnuPopupQuit_clicked()));
 		setContextMenu(&popupMenu);
 		connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
 				this, SLOT(activated(QSystemTrayIcon::ActivationReason)));

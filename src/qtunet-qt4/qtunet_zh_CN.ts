@@ -350,6 +350,14 @@ to open bpf device.</source>
     </message>
 </context>
 <context>
+    <name>QTunetSystemTray</name>
+    <message>
+        <location filename="main.h" line="50"/>
+        <source>&amp;Quit MyTunet</source>
+        <translation>退出MyTunet(&amp;Q)</translation>
+    </message>
+</context>
+<context>
     <name>Ui</name>
     <message>
         <source>None(International)</source>
