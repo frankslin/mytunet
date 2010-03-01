@@ -1,5 +1,9 @@
 #!/bin/sh
 
-LD_LIBRARY_PATH = .:${LD_LIBRARY_PATH}
+if [ -L "$0" ]; then
+	fpath=`readlink $0`
+else
+	fpath=$0
+fi
 
-./qtunet
+env LD_LIBRARY_PATH=`dirname $fpath`:${LD_LIBRARY_PATH} `dirname $fpath`/qtunet
