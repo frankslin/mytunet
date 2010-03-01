@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include <signal.h>
 
 #include "../ethcard.h"
 #include "../mytunet.h"
@@ -40,14 +40,26 @@ QTunet g_qtunet;
 QTunetLogs g_qtunetlogs;
 QTunetThread g_qtunet_thread;
 
+void sigpipe_act(int x)
+{
+	dprintf("Warning: SIGPIPE received.\n");
+}
+
 int main(int argc, char **argv)
 {
+	struct sigaction sapipe;
+	sapipe.sa_handler = sigpipe_act;
+	sigemptyset(&sapipe.sa_mask);
+	sigaddset(&sapipe.sa_mask, SIGPIPE);
+	sapipe.sa_flags = 0;
+	sigaction(SIGPIPE, &sapipe, NULL);
+
     QApplication app(argc, argv);
 
     QString locale = QLocale::system().name();
 
     QTranslator translator;
-    translator.load(QString("qtunet_") + locale, TRANSLATION_DIR);
+    translator.load(QString("qtunet_") + locale, ":/i18n/"); //TRANSLATION_DIR);
     app.installTranslator(&translator);
 
     QTunetDlgMain dlg;

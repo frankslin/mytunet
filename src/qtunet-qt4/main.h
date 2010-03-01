@@ -115,15 +115,15 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
 
 //          txtLog->setTextFormat( Qt::LogText );
 
-            cmbAdapter->insertItems(0,g_qtunet.getEthcards());
-            for(int i=0;i<cmbAdapter->count(); i++)
+//            cmbAdapter->insertItems(0,g_qtunet.getEthcards());
+/*            for(int i=0;i<cmbAdapter->count(); i++)
             {
                 if(cmbAdapter->itemText(i) == g_qtunet.getEthcard())
                 {
                     cmbAdapter->setCurrentIndex(i);
                     break;
                 }
-            }
+            }*/
             txtUsername->setText(g_qtunet.getUsername());
 
             isUserEditingPassword = false;
@@ -133,7 +133,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                 txtPassword->setText("");
             isUserEditingPassword = true;
 
-            chkUseDot1x->setChecked(g_qtunet.getUseDot1x());
+//            chkUseDot1x->setChecked(g_qtunet.getUseDot1x());
 
             chkSavePassword->setChecked(g_qtunet.isSavePassword);
 			chkAutoLogin->setChecked(g_qtunet.autoLogin);
@@ -182,14 +182,14 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
 
 			needHide = true;
             g_qtunet.setUsername(txtUsername->text());
-            g_qtunet.setEthcard(cmbAdapter->currentText());
+//            g_qtunet.setEthcard(cmbAdapter->currentText());
 
             txtLog->append(tr("[CONFIG] Username: ") + txtUsername->text());
-            txtLog->append(tr("[CONFIG] Ethcard : ") + cmbAdapter->currentText());
+//            txtLog->append(tr("[CONFIG] Ethcard : ") + cmbAdapter->currentText());
 
-            ETHCARD_INFO ei = g_qtunet.getEthcardInfo(cmbAdapter->currentText());
-            txtLog->append(QString(tr("[CONFIG] Ethcard MAC: ")) + QString(ei.mac));
-            txtLog->append(QString(tr("[CONFIG] Ethcard IP : ")) + QString(ei.ip));
+//            ETHCARD_INFO ei = g_qtunet.getEthcardInfo(cmbAdapter->currentText());
+//            txtLog->append(QString(tr("[CONFIG] Ethcard MAC: ")) + QString(ei.mac));
+//            txtLog->append(QString(tr("[CONFIG] Ethcard IP : ")) + QString(ei.ip));
             switch(cmbLimitation->currentIndex())
             {
                 case 0:
@@ -214,8 +214,8 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                     g_qtunet.setLanguage(LANGUAGE_CHINESE);
                     break;
             }
-            g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
-            txtLog->append(QString(tr("[CONFIG] Use 802.1x : ")) + (chkUseDot1x->isChecked() ? tr("Yes") : tr("No")));
+//            g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
+//            txtLog->append(QString(tr("[CONFIG] Use 802.1x : ")) + (chkUseDot1x->isChecked() ? tr("Yes") : tr("No")));
 
             isUserEditingPassword = false;
             txtPassword->setText(g_qtunet.getMD5Password());
@@ -236,7 +236,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
             hide();
             g_qtunet.logout();
             g_qtunet.setUsername(txtUsername->text());
-            g_qtunet.setEthcard(cmbAdapter->currentText());
+//            g_qtunet.setEthcard(cmbAdapter->currentText());
             switch(cmbLimitation->currentIndex())
             {
                 case 0:
@@ -250,7 +250,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                     break;
             }
 
-            g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
+//            g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
 			g_qtunet.autoLogin = chkAutoLogin->isChecked();
             g_qtunet.saveConfig(chkSavePassword->isChecked());
             QApplication::exit(0);

@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>DlgMain</class>
- <widget class="QDialog" name="DlgMain" >
-  <property name="geometry" >
+ <widget class="QDialog" name="DlgMain">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,257 +10,214 @@
     <height>567</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="font" >
+  <property name="font">
    <font>
     <family>Bitstream Vera Sans</family>
    </font>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>qtunet</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="icons.qrc" >
+  <property name="windowIcon">
+   <iconset resource="icons.qrc">
     <normaloff>:/DlgMain/images/image0.png</normaloff>:/DlgMain/images/image0.png</iconset>
   </property>
-  <property name="autoFillBackground" >
+  <property name="autoFillBackground">
    <bool>false</bool>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2" >
-   <item rowspan="2" row="0" column="0" colspan="7" >
-    <layout class="QVBoxLayout" name="vertLayout" >
-     <property name="sizeConstraint" >
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0" rowspan="2" colspan="7">
+    <layout class="QVBoxLayout" name="vertLayout">
+     <property name="sizeConstraint">
       <enum>QLayout::SetMaximumSize</enum>
      </property>
      <item>
-      <layout class="QGridLayout" name="MainGrid" >
-       <item row="2" column="2" >
-        <widget class="QToolButton" name="cmdAbout" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text" >
-          <string>About</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3" >
-        <widget class="QPushButton" name="cmdQuit" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text" >
-          <string>Quit</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1" >
-        <widget class="QLineEdit" name="txtPassword" >
-         <property name="frame" >
+      <layout class="QGridLayout" name="MainGrid">
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="txtPassword">
+         <property name="frame">
           <bool>true</bool>
          </property>
-         <property name="echoMode" >
+         <property name="echoMode">
           <enum>QLineEdit::Password</enum>
          </property>
         </widget>
        </item>
-       <item row="2" column="0" >
-        <widget class="QLabel" name="textLabel2" >
-         <property name="text" >
+       <item row="3" column="0">
+        <widget class="QLabel" name="textLabel2">
+         <property name="text">
           <string>Password:</string>
          </property>
-         <property name="wordWrap" >
+         <property name="wordWrap">
           <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="1" column="0" >
-        <widget class="QLabel" name="textLabel1" >
-         <property name="text" >
+       <item row="1" column="0">
+        <widget class="QLabel" name="textLabel1">
+         <property name="text">
           <string>Username:</string>
          </property>
-         <property name="wordWrap" >
+         <property name="wordWrap">
           <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="1" column="1" >
-        <widget class="QLineEdit" name="txtUsername" >
-         <property name="frame" >
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="txtUsername">
+         <property name="frame">
           <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="1" column="2" colspan="2" >
-        <widget class="QToolButton" name="cmdHelp" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text" >
-          <string>Help!!!!!!!!</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" >
-        <widget class="QLabel" name="textLabel4" >
-         <property name="text" >
-          <string>Adapter:</string>
-         </property>
-         <property name="wordWrap" >
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" >
-        <widget class="QComboBox" name="cmbAdapter" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2" >
-        <widget class="QPushButton" name="cmdLogin" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text" >
-          <string>Logi&amp;n</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3" >
-        <widget class="QPushButton" name="cmdLogout" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text" >
-          <string>Lo&amp;gout</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" >
-        <widget class="QLabel" name="textLabel3" >
-         <property name="text" >
-          <string>Limitation:</string>
-         </property>
-         <property name="wordWrap" >
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1" >
-        <widget class="QComboBox" name="cmbLimitation" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2" colspan="2" >
-        <widget class="QCheckBox" name="chkSavePassword" >
-         <property name="text" >
-          <string>Save Password</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1" >
-        <widget class="QCheckBox" name="chkUseDot1x" >
-         <property name="text" >
-          <string>Use &amp;802.1x (for Zijing Users)</string>
-         </property>
-         <property name="tristate" >
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1" colspan="3" >
-        <widget class="QLabel" name="lblStatus" >
-         <property name="text" >
+       <item row="7" column="1" colspan="3">
+        <widget class="QLabel" name="lblStatus">
+         <property name="text">
           <string>Status</string>
          </property>
-         <property name="alignment" >
+         <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <property name="wordWrap" >
+         <property name="wordWrap">
           <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="5" column="0" >
-        <widget class="QLabel" name="imgStatus" >
-         <property name="enabled" >
+       <item row="7" column="0">
+        <widget class="QLabel" name="imgStatus">
+         <property name="enabled">
           <bool>true</bool>
          </property>
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="pixmap" >
-          <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
+         <property name="pixmap">
+          <pixmap resource="icons.qrc">:/DlgMain/images/image1.png</pixmap>
          </property>
-         <property name="scaledContents" >
+         <property name="scaledContents">
           <bool>true</bool>
          </property>
-         <property name="wordWrap" >
+         <property name="wordWrap">
           <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" >
-        <widget class="QLabel" name="label" >
-         <property name="text" >
+       <item row="6" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
           <string>Language:</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1" >
-        <widget class="QComboBox" name="cmbLanguage" />
+       <item row="5" column="0">
+        <widget class="QLabel" name="textLabel3">
+         <property name="text">
+          <string>Limitation:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
-       <item row="4" column="2" colspan="2" >
-        <widget class="QCheckBox" name="chkAutoLogin" >
-         <property name="text" >
+       <item row="6" column="1">
+        <widget class="QComboBox" name="cmbLanguage"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="cmbLimitation">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QCheckBox" name="chkSavePassword">
+         <property name="text">
+          <string>Save Password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="cmdLogin">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Logi&amp;n</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QPushButton" name="cmdQuit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Quit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QCheckBox" name="chkAutoLogin">
+         <property name="text">
           <string>Auto Login</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="cmdLogout">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Lo&amp;gout</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QToolButton" name="cmdAbout">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>About</string>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QTextEdit" name="txtLog" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+      <widget class="QTextEdit" name="txtLog">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>1</horstretch>
          <verstretch>1</verstretch>
         </sizepolicy>
        </property>
-       <property name="sizeIncrement" >
+       <property name="sizeIncrement">
         <size>
          <width>10</width>
          <height>10</height>
@@ -269,123 +227,112 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="2" >
-    <widget class="QLabel" name="imgStatus_Domestic" >
-     <property name="enabled" >
+   <item row="1" column="2">
+    <widget class="QLabel" name="imgStatus_Domestic">
+     <property name="enabled">
       <bool>true</bool>
      </property>
-     <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image2.png</pixmap>
+     <property name="pixmap">
+      <pixmap resource="icons.qrc">:/DlgMain/images/image2.png</pixmap>
      </property>
-     <property name="scaledContents" >
+     <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="1" column="4" >
-    <widget class="QLabel" name="imgStatus_None" >
-     <property name="enabled" >
+   <item row="1" column="4">
+    <widget class="QLabel" name="imgStatus_None">
+     <property name="enabled">
       <bool>true</bool>
      </property>
-     <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image1.png</pixmap>
+     <property name="pixmap">
+      <pixmap resource="icons.qrc">:/DlgMain/images/image1.png</pixmap>
      </property>
-     <property name="scaledContents" >
+     <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="1" column="1" >
-    <widget class="QLabel" name="imgStatus_Busy" >
-     <property name="enabled" >
+   <item row="1" column="1">
+    <widget class="QLabel" name="imgStatus_Busy">
+     <property name="enabled">
       <bool>true</bool>
      </property>
-     <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image3.png</pixmap>
+     <property name="pixmap">
+      <pixmap resource="icons.qrc">:/DlgMain/images/image3.png</pixmap>
      </property>
-     <property name="scaledContents" >
+     <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="1" column="3" >
-    <widget class="QLabel" name="imgStatus_NoLimit" >
-     <property name="enabled" >
+   <item row="1" column="3">
+    <widget class="QLabel" name="imgStatus_NoLimit">
+     <property name="enabled">
       <bool>true</bool>
      </property>
-     <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image4.png</pixmap>
+     <property name="pixmap">
+      <pixmap resource="icons.qrc">:/DlgMain/images/image4.png</pixmap>
      </property>
-     <property name="scaledContents" >
+     <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="1" column="5" >
-    <widget class="QLabel" name="imgStatus_Campus" >
-     <property name="enabled" >
+   <item row="1" column="5">
+    <widget class="QLabel" name="imgStatus_Campus">
+     <property name="enabled">
       <bool>true</bool>
      </property>
-     <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image5.png</pixmap>
+     <property name="pixmap">
+      <pixmap resource="icons.qrc">:/DlgMain/images/image5.png</pixmap>
      </property>
-     <property name="scaledContents" >
+     <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="1" column="6" >
-    <widget class="QLabel" name="imgStatus_Dot1x" >
-     <property name="enabled" >
+   <item row="1" column="6">
+    <widget class="QLabel" name="imgStatus_Dot1x">
+     <property name="enabled">
       <bool>true</bool>
      </property>
-     <property name="pixmap" >
-      <pixmap resource="icons.qrc" >:/DlgMain/images/image6.png</pixmap>
+     <property name="pixmap">
+      <pixmap resource="icons.qrc">:/DlgMain/images/image6.png</pixmap>
      </property>
-     <property name="scaledContents" >
+     <property name="scaledContents">
       <bool>true</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
+ <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>txtUsername</tabstop>
   <tabstop>txtPassword</tabstop>
-  <tabstop>cmdLogin</tabstop>
-  <tabstop>cmdLogout</tabstop>
-  <tabstop>cmdQuit</tabstop>
-  <tabstop>chkUseDot1x</tabstop>
-  <tabstop>chkSavePassword</tabstop>
-  <tabstop>chkAutoLogin</tabstop>
-  <tabstop>cmbLimitation</tabstop>
-  <tabstop>cmbLanguage</tabstop>
-  <tabstop>cmdHelp</tabstop>
-  <tabstop>cmbAdapter</tabstop>
-  <tabstop>cmdAbout</tabstop>
   <tabstop>txtLog</tabstop>
  </tabstops>
  <resources>
-  <include location="icons.qrc" />
+  <include location="icons.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -394,11 +341,11 @@
    <receiver>DlgMain</receiver>
    <slot>cmdLogout_clicked()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -410,11 +357,11 @@
    <receiver>DlgMain</receiver>
    <slot>cmdQuit_clicked()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -426,11 +373,11 @@
    <receiver>DlgMain</receiver>
    <slot>txtPassword_textChanged(QString)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -442,27 +389,11 @@
    <receiver>DlgMain</receiver>
    <slot>txtPassword_returnPressed()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cmdHelp</sender>
-   <signal>clicked()</signal>
-   <receiver>DlgMain</receiver>
-   <slot>cmdHelp_clicked()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -474,11 +405,11 @@
    <receiver>DlgMain</receiver>
    <slot>cmdAbout_clicked()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -490,11 +421,11 @@
    <receiver>DlgMain</receiver>
    <slot>cmdLogin_clicked()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>259</x>
      <y>22</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>200</x>
      <y>184</y>
     </hint>
