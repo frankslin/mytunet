@@ -1,0 +1,9 @@
+README for Qt4 libs archive
+
+Just extract the files to the same directory as the qtunet executable, and run startqtunet.
+You may also make symlinks for you to run easier.
+
+The libQtCore.so.4, libQtGui.so.4 and libqcncodecs.so are part of Qt4.
+Qt libraries are used under LGPL v2.1 License. 
+
+Nokia, Qt and their respective logos are trademarks of Nokia Corporation in Finland and/or other countries worldwide. 
