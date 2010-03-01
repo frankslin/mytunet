@@ -321,7 +321,16 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
+  <tabstop>txtUsername</tabstop>
   <tabstop>txtPassword</tabstop>
+  <tabstop>cmdLogin</tabstop>
+  <tabstop>chkSavePassword</tabstop>
+  <tabstop>chkAutoLogin</tabstop>
+  <tabstop>cmbLimitation</tabstop>
+  <tabstop>cmbLanguage</tabstop>
+  <tabstop>cmdLogout</tabstop>
+  <tabstop>cmdAbout</tabstop>
+  <tabstop>cmdQuit</tabstop>
   <tabstop>txtLog</tabstop>
  </tabstops>
  <resources>
