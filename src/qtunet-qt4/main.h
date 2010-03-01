@@ -214,7 +214,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                     g_qtunet.setLanguage(LANGUAGE_CHINESE);
                     break;
             }
-//            g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
+            g_qtunet.setDot1x(false, false);
 //            txtLog->append(QString(tr("[CONFIG] Use 802.1x : ")) + (chkUseDot1x->isChecked() ? tr("Yes") : tr("No")));
 
             isUserEditingPassword = false;
@@ -250,7 +250,7 @@ class QTunetDlgMain : public QDialog, public Ui::DlgMain
                     break;
             }
 
-//            g_qtunet.setDot1x(chkUseDot1x->isChecked(), false);
+            g_qtunet.setDot1x(false, false);
 			g_qtunet.autoLogin = chkAutoLogin->isChecked();
             g_qtunet.saveConfig(chkSavePassword->isChecked());
             QApplication::exit(0);
