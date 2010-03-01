@@ -6,12 +6,14 @@
 #ifndef _DES_H
 #define _DES_H
 
+#include <stdint.h>
+
 #ifndef uint8
-#define uint8  unsigned char
+#define uint8  uint8_t
 #endif
 
 #ifndef uint32
-#define uint32 unsigned long int
+#define uint32 uint32_t
 #endif
 
 typedef struct

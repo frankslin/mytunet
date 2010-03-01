@@ -42,6 +42,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <stdint.h>
 
 #if defined(_LINUX) && !defined(_POSIX)
 #	define _POSIX
@@ -61,8 +62,8 @@
 
 #	define THREADRET POINTER WINAPI
 
-	typedef unsigned short UINT16;
-	typedef unsigned char UINT8;
+	typedef uint16_t UINT16;
+	typedef uint8_t UINT8;
 	
 	
 #	pragma comment(lib, "ws2_32.lib")
@@ -103,14 +104,14 @@
 	typedef unsigned char BYTE;
 	typedef unsigned short USHORT;
 	typedef int INT;
-	typedef int INT32;
+	typedef int32_t INT32;
 	typedef void VOID;
 	typedef unsigned long DWORD;
 	typedef unsigned short WORD;
 	
-	typedef unsigned long UINT32;
-	typedef unsigned short UINT16;
-	typedef unsigned char UINT8;
+	typedef uint32_t UINT32;
+	typedef uint16_t UINT16;
+	typedef uint8_t UINT8;
 
 	typedef struct sockaddr_in SOCKADDR_IN;
 	typedef struct hostent HOSTENT;
