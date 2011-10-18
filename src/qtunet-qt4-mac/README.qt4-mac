@@ -1,0 +1,12 @@
+README for building qtunet-qt4-mac
+
+Run `qmake qtunet-mac.pro -spec macx-g++ -r CONFIG+=release` to generate Makefile. Then run `make` to build qtunet-mac
+application. After that, run `make pack` to pack Qt4 frameworks into qtunet-mac application for redistribution.
+
+You may just execute `build.sh` to do everything automatically.
+
+Tested with MacOS X Lion (10.7.2), Qt 4.6.3.
+
+Qt libraries are used under LGPL v2.1 License. 
+
+Nokia, Qt and their respective logos are trademarks of Nokia Corporation in Finland and/or other countries worldwide. 
